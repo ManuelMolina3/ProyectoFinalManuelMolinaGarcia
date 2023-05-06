@@ -1,4 +1,4 @@
-package com.salesianostriana.dam.principioproyectofinal.controller;
+package com.salesianostriana.dam.proyectofinal.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.salesianostriana.dam.principioproyectofinal.model.Reforma;
+import com.salesianostriana.dam.proyectofinal.model.Reforma;
 
 @Controller
 public class ReformaController {

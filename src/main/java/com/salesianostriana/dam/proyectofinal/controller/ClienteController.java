@@ -1,4 +1,4 @@
-package com.salesianostriana.dam.principioproyectofinal.controller;
+package com.salesianostriana.dam.proyectofinal.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -7,8 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+<<<<<<< HEAD:src/main/java/com/salesianostriana/dam/principioproyectofinal/controller/ClienteController.java
 import com.salesianostriana.dam.principioproyectofinal.model.Cliente;
 import com.salesianostriana.dam.principioproyectofinal.service.ClienteService;
+=======
+import com.salesianostriana.dam.proyectofinal.model.Cliente;
+>>>>>>> 9d45bf5b10560d88c16016a1916c1320749f5891:src/main/java/com/salesianostriana/dam/proyectofinal/controller/ClienteController.java
 
 @Controller
 public class ClienteController {

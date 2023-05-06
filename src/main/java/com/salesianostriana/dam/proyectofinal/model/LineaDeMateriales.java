@@ -1,4 +1,4 @@
-package com.salesianostriana.dam.principioproyectofinal.model;
+package com.salesianostriana.dam.proyectofinal.model;
 
 import java.util.ArrayList;
 import java.util.List;

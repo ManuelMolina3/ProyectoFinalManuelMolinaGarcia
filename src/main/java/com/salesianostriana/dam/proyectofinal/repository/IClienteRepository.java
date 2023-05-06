@@ -1,8 +1,8 @@
-package com.salesianostriana.dam.principioproyecto.repository;
+package com.salesianostriana.dam.proyectofinal.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.salesianostriana.dam.principioproyectofinal.model.Cliente;
+import com.salesianostriana.dam.proyectofinal.model.Cliente;
 
 public interface IClienteRepository extends JpaRepository<Cliente, Long>{
 

@@ -1,4 +1,4 @@
-package com.salesianostriana.dam.principioproyectofinal.service;
+package com.salesianostriana.dam.proyectofinal.service;
 
 import java.util.List;
 
