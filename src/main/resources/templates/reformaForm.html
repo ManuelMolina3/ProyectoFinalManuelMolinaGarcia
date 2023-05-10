@@ -10,7 +10,7 @@
     <title>Formulario para reformas</title>
 </head>
 <body>
-    <form method="POST" th:action="addReforma" th:object="${reforma}">
+    <form method="POST" th:action="@{/addReforma/submit}" th:object="${reforma}">
         <fieldset>ALTA PARA UNA REFORMA</fieldset>
         <div>
             <label for="fechaInicio" class="form-label" >Fecha de inicio</label>

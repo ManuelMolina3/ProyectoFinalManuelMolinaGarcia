@@ -10,9 +10,10 @@
     <title>edicion para un clientes</title>
 </head>
 <body>
-    <form method="POST" th:action="edicionCliente" th:object="${cliente}">
+    <form method="POST" th:action="@{/editarCliente/submit}" th:object="${cliente}">
         <fieldset>EDITCIÓN DE UN CLIENTE</fieldset>
         <div>
+			<input th:if="${cliente.id_cliente != 0}" type="hidden" name="id" th:field="*{id_cliente}" />
             <label for="nombre" class="form-label">Nombre</label>
             <input type="text" class="form-control" th:field="*{nombre}">
             <label for="apellidos" class="form-label">Apellidos</label>
@@ -20,7 +21,7 @@
         </div>
         <div>
             <label for="dni" class="form-label">DNI</label>
-            <input type="text" class="form-control" th:field="*{dni}" disabled>
+            <input type="text" class="form-control" th:field="*{dni}">
             <label for="ciudad" class="form-label">Ciudad</label>
             <input type="text" class="form-control" th:field="*{ciudad}">
         </div>
@@ -28,7 +29,7 @@
             <label for="telefono" class="form-label">Teléfono</label>
             <input type="text" class="form-control" th:field="*{telefono}">
             <label for="email" class="form-label">Correo electronico</label>
-            <input type="email" class="form-control" th:field="*{email}" disabled>
+            <input type="email" class="form-control" th:field="*{email}">
         </div>
         <div class="col-12">
             <button type="submit" class="btn btn-primary col-12">Editar</button>

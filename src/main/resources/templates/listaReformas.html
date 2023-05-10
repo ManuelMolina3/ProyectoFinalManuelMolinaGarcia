@@ -15,7 +15,7 @@
 </head>
 
 <body>
-	<a th:href="@{/addReforma}">Nuevo reforma</a>
+	<a th:href="@{/addReforma}">Añadir nueva reforma</a>
 	<table class="table table-striped table-hover">
 
 		<thead>
@@ -33,9 +33,9 @@
 				<td th:text="${reforma.fecha_final}">fecha de final</td>
 				<td th:text="${reforma.presupuesto}">presupuesto</td>
 				<td>
-					<a href="#" th:href="@{/editarReforma/{id}(id=${reforma.id})}">Editar</a> |
-					<a href="#" th:href="@{/borrarReforma/{id}(id=${reforma.id})}">Borrar</a> |
-					<a href="#" th:href="@{/verDetalles/{id}(id=${reforma.id})}">Ver detalles</a>
+					<a th:href="@{/editarReforma/{id}(id=${reforma.id})}">Editar</a> |
+					<a th:href="@{/borrarReforma/{id}(id=${reforma.id})}">Borrar</a> |
+					<a th:href="@{/verDetalles/{id}(id=${reforma.id})}">Ver detalles</a>
 				</td>
 			</tr>
 		</tbody>

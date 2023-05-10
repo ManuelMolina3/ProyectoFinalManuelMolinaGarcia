@@ -44,7 +44,7 @@ public class ClienteController {
 		Cliente clienteEditar = clienteServicio.findById(id);
 		if (clienteEditar != null) {
 			model.addAttribute("cliente", clienteEditar);
-			return "editFormCliente";
+			return "editFormClientes";
 		} else {
 			return "redirect:/listaClientes";
 		}
