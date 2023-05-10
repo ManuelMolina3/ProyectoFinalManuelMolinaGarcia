@@ -31,8 +31,8 @@ public class Trabajador {
 	
 	private String nombre;
 	private String apellido;
-	private String correo_electronico;
-	private String contraseña;
+	private String email;
+	private String password;
 	private double sueldoBase;
 	private double precioHoraExtra;
 	

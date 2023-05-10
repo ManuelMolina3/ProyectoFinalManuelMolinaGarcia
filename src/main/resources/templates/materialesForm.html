@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Materiales</title>
+</head>
+<body>
+    <form method="post" th:action="addMateriales" th:object="${materiales}">
+        <fieldset>AÑADIR UN MATERIAL</fieldset>
+        <div>
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" th:field="*{nombre}" requiered>
+        </div>
+        <div>
+            <label for="precio" class="form-label">Precio</label>
+            <input type="number" class="form-control" th:field="*{coste}" requiered>
+            <label for="pvp" class="form-label">PVP</label>
+            <input type="number" class="form-control" th:field="*{pvpMaterial}" requiered>
+        </div>
+        <div>
+            <input type="checkbox" class="form-check-input" id="norobot" required>
+            <label class="form-check-label" for="norobot">No soy un robot</label></br></br>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary col-12">Añadir</button>
+        </div>
+      </form>
+</body>
+</html>

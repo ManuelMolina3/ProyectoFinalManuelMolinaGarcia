@@ -7,32 +7,28 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <link rel="stylesheet" th:href="@{../css/style.css}">
-    <title>Formulario para trabajadores</title>
+    <title>Edición para trabajadores</title>
 </head>
 <body>
-    <form method="post" th:action="addTrabajador" th:object="${trabajador}">
-      <fieldset>ALTA PARA UN TRABAJADOR</fieldset>
+    <form method="post" action="editarTrabajador" th:object="${trabajador}">
+      <fieldset>EDICIÓN PARA UN TRABAJADOR</fieldset>
         <div>
           <label for="nombre" class="form-label">Nombre</label>
-          <input type="text" class="form-control" th:field="*{nombre}" requiered>
+          <input type="text" class="form-control" th:field="*{nombre}">
           <label for="apellidos" class="form-label">Apellidos</label>
-          <input type="text" class="form-control" th:field="*{apeliido}" requiered>
+          <input type="text" class="form-control" th:field="*{apeliido}">
         </div>
         <div>
           <label for="email" class="form-label">Correo electronico</label>
-          <input type="email" class="form-control" th:field="*{email}" requiered>
+          <input type="email" class="form-control" th:field="*{email}">
           <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" th:field="*{password}" requiered>
+          <input type="password" class="form-control" th:field="*{password}" disabled>
         </div>
         <div>
             <label for="sueldoBase" class="form-label">Sueldo base</label>
             <input type="number" class="form-control" th:field="*{sueldoBase}" requiered>
             <label for="precioHorasextra" class="form-label">Precio de las horas extra</label>
-            <input type="number" class="form-control" th:field="*{precioHorasExtra}" requiered>
-        </div>
-        <div>
-          <input type="checkbox" class="form-check-input" id="norobot" required>
-          <label class="form-check-label" for="norobot">No soy un robot</label></br></br>
+            <input type="number" class="form-control" th:field="*{precioHorasextra}" requiered>
         </div>
         <div class="col-12">
             <button type="submit" class="btn btn-primary col-12">Añadir</button>
@@ -40,4 +36,3 @@
       </form>
 </body>
 </html>
-<!-- FALTA METERLE JAVASCRIPT PARA QUE APAREZCA EL OJO PARA EL TEMA DE LA CONTRASEÑA-->

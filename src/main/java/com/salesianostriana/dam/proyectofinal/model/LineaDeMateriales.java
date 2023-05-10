@@ -37,14 +37,6 @@ public class LineaDeMateriales {
 				orphanRemoval= true)
 	private List<Materiales> materiales = new ArrayList<>();
 	
-	public void addMateriales (Materiales material) {
-		material.setLineaVenta(this);
-		this.materiales.add(material);
-	}
-	public void removeMateriales (Materiales material) {
-		this.materiales.remove(material);
-		material.setLineaVenta(null);
-	}
 	
 	
 }

@@ -13,7 +13,7 @@ public abstract class BaseService<T, ID, R extends JpaRepository<T, ID>> impleme
 	
 	
 	@Override
-	public T save(T t) {
+	public T add(T t) {
 		return repositorio.save(t);
 	}
 	

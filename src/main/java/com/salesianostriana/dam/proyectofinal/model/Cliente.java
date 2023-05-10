@@ -31,7 +31,6 @@ public class Cliente {
 	private String apellido;
 	private String dni;
 	private String ciudad;
-	private String contraseña;
 	private int telefono;
 	private String email;
 	

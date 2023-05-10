@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface IBaseService<T, ID> {
 
-	T save(T t);
+	T add(T t);
 
 	T findById(ID id);
 

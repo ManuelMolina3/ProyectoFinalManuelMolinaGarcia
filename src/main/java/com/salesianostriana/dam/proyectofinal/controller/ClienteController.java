@@ -5,37 +5,61 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
-<<<<<<< HEAD:src/main/java/com/salesianostriana/dam/principioproyectofinal/controller/ClienteController.java
-import com.salesianostriana.dam.principioproyectofinal.model.Cliente;
-import com.salesianostriana.dam.principioproyectofinal.service.ClienteService;
-=======
 import com.salesianostriana.dam.proyectofinal.model.Cliente;
->>>>>>> 9d45bf5b10560d88c16016a1916c1320749f5891:src/main/java/com/salesianostriana/dam/proyectofinal/controller/ClienteController.java
+import com.salesianostriana.dam.proyectofinal.service.ClienteService;
 
 @Controller
 public class ClienteController {
-	
+
 	@Autowired
 	private ClienteService clienteServicio;
-	
-	@GetMapping("/listaCliente")
-	public String listadoClientes(Model model) {
+
+	public ClienteController(ClienteService clienteServicio) {
+
+		this.clienteServicio = clienteServicio;
+	}
+
+	@GetMapping("/listaClientes")
+	public String listaClientes(Model model) {
 		model.addAttribute("listaClientes", clienteServicio.findAll());
 		return "listaClientes";
 	}
-	@GetMapping("/cliente")
-	public String showClienteForm (Model model) {
-		Cliente cliente= new Cliente();
-		model.addAttribute("clienteForm", cliente);
-		
+
+	@GetMapping("/addCliente")
+	public String mostrarFormClientes(Model model) {
+		model.addAttribute("cliente", new Cliente());
 		return "clienteForm";
 	}
-	@PostMapping("/addCliente")
-	public String submitCliente(@ModelAttribute("clienteForm") Cliente cliente, Model model) {
-		model.addAttribute("cliente", cliente);
-		
-		return "tablaClientes";
+
+	@PostMapping("/addCliente/submit")
+	public String procesarFormClientes(@ModelAttribute("cliente") Cliente cliente) {
+		clienteServicio.add(cliente);
+		return "redirect:/listaClientes";
 	}
+
+	@GetMapping("/editarCliente/{id}")
+	public String mostrarFormEdicionCliente(@PathVariable("id") long id, Model model) {
+		Cliente clienteEditar = clienteServicio.findById(id);
+		if (clienteEditar != null) {
+			model.addAttribute("cliente", clienteEditar);
+			return "editFormCliente";
+		} else {
+			return "redirect:/listaClientes";
+		}
+	}
+
+	@PostMapping("/editarCliente/submit")
+	public String procesarFormEditCliente(@ModelAttribute("cliente") Cliente cliente) {
+		clienteServicio.edit(cliente);
+		return "redirect:/listaClientes";
+	}
+
+	@GetMapping("/borrarCliente/{id}")
+	public String deleteCliente(@PathVariable("id") long id) {
+		clienteServicio.deleteById(id);
+		return "redirect:/listaClientes";
+	}
+
 }
