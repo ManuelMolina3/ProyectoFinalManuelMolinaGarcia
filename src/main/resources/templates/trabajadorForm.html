@@ -10,13 +10,13 @@
     <title>Formulario para trabajadores</title>
 </head>
 <body>
-    <form method="post" th:action="addTrabajador" th:object="${trabajador}">
+    <form method="post" th:action="@{/addTrabajador/submit}" th:object="${trabajador}">
       <fieldset>ALTA PARA UN TRABAJADOR</fieldset>
         <div>
           <label for="nombre" class="form-label">Nombre</label>
           <input type="text" class="form-control" th:field="*{nombre}" requiered>
           <label for="apellidos" class="form-label">Apellidos</label>
-          <input type="text" class="form-control" th:field="*{apeliido}" requiered>
+          <input type="text" class="form-control" th:field="*{apellido}" requiered>
         </div>
         <div>
           <label for="email" class="form-label">Correo electronico</label>
@@ -28,7 +28,7 @@
             <label for="sueldoBase" class="form-label">Sueldo base</label>
             <input type="number" class="form-control" th:field="*{sueldoBase}" requiered>
             <label for="precioHorasextra" class="form-label">Precio de las horas extra</label>
-            <input type="number" class="form-control" th:field="*{precioHorasExtra}" requiered>
+            <input type="number" class="form-control" th:field="*{precioHoraExtra}" requiered>
         </div>
         <div>
           <input type="checkbox" class="form-check-input" id="norobot" required>

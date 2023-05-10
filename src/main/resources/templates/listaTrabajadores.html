@@ -11,7 +11,7 @@
 		integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
 		crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="../css/style.css" th:href="@{/css/style.css}">
-	<title>Tabla de trabajadores</title>
+	<title>MarGarReformas</title>
 </head>
 
 <body>
@@ -35,10 +35,10 @@
 				<td th:text="${trabajador.apellido}">Fernandez García</td>
 				<td th:text="${trabajador.email}">paco@gmail.com</td>
 				<td th:text="${trabajador.sueldoBase}">1500</td>
-				<td th:text="${trabajador.precioHorasExtra}">25</td>
+				<td th:text="${trabajador.precioHoraExtra}">25</td>
 				<td>
-					<a href="#" th:href="@{/editarTrabajador/{id}(id=${trabajador.id})}">Editar</a> |
-					<a href="#" th:href="@{/borrarTrabajadores/{id}(id=${trabajador.id})}">Borrar</a>
+					<a href="#" th:href="@{/editarTrabajador/{id}(id=${trabajador.id_trabajador})}">Editar</a> |
+					<a href="#" th:href="@{/borrarTrabajadores/{id}(id=${trabajador.id_trabajador})}">Borrar</a>
 				</td>
 			</tr>
 		</tbody>

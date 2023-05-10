@@ -22,14 +22,14 @@
             </tr>
           </thead>
           <tbody>
-            <tr th:each="materiales : ${lista}">
+            <tr th:each="materiales : ${listaMateriales}">
             <td th:text="${materiales.id}">1</td>
             <td th:text="${materiales.nombre}">Ladrillo</td>
-            <td th:text="${materiales.precio}">5.09</td>
-            <td th:text="${materiales.pvp}">6.98</td>
+            <td th:text="${materiales.coste}">5.09</td>
+            <td th:text="${materiales.pvpMaterial}">6.98</td>
 			<td>
 				<a th:href="@{/editarMateriales/{id}(id=${materiales.id})}">Editar</a> | 
-				<a th:href="@{/deletemateriales/{id}(id=${materiales.id})}">Borrar</a> |
+				<a th:href="@{/deleteMateriales/{id}(id=${materiales.id})}">Borrar</a> 
 			</td>
 		</tr>
       

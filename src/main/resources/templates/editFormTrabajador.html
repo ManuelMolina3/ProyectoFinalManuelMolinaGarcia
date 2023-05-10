@@ -10,13 +10,14 @@
     <title>Edición para trabajadores</title>
 </head>
 <body>
-    <form method="post" action="editarTrabajador" th:object="${trabajador}">
+    <form method="post" th:action="@{/editarTrabajador/submit}" th:object="${trabajador}">
       <fieldset>EDICIÓN PARA UN TRABAJADOR</fieldset>
         <div>
+			<input th:if="${trabajador.id_trabajador != 0}" type="hidden" name="id" th:field="*{id_trabajador}" />
           <label for="nombre" class="form-label">Nombre</label>
           <input type="text" class="form-control" th:field="*{nombre}">
           <label for="apellidos" class="form-label">Apellidos</label>
-          <input type="text" class="form-control" th:field="*{apeliido}">
+          <input type="text" class="form-control" th:field="*{apellido}">
         </div>
         <div>
           <label for="email" class="form-label">Correo electronico</label>
@@ -28,7 +29,7 @@
             <label for="sueldoBase" class="form-label">Sueldo base</label>
             <input type="number" class="form-control" th:field="*{sueldoBase}" requiered>
             <label for="precioHorasextra" class="form-label">Precio de las horas extra</label>
-            <input type="number" class="form-control" th:field="*{precioHorasextra}" requiered>
+            <input type="number" class="form-control" th:field="*{precioHoraExtra}" requiered>
         </div>
         <div class="col-12">
             <button type="submit" class="btn btn-primary col-12">Añadir</button>

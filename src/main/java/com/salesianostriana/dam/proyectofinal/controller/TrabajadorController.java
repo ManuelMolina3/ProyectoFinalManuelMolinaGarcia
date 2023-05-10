@@ -17,11 +17,11 @@ public class TrabajadorController {
 	private TrabajadorService trabajadorServicio;
 
 	public TrabajadorController(TrabajadorService trabajadorServicio) {
-		super();
+		
 		this.trabajadorServicio = trabajadorServicio;
 	}
 
-	@GetMapping("/listaTrabajador")
+	@GetMapping("/listaTrabajadores")
 	public String listaTrabajadores(Model model) {
 		model.addAttribute("listaTrabajadores", trabajadorServicio.findAll());
 		return "listaTrabajadores";

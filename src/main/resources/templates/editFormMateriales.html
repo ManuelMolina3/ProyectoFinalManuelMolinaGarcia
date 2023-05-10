@@ -7,17 +7,18 @@
     <title>Formulario de Materiales</title>
 </head>
 <body>
-    <form method="POST" th:action="editarMateriales" th:object="${materiales}">
+    <form method="POST" th:action="@{/editarMateriales/submit}" th:object="${materiales}">
         <fieldset>EDITAR UN MATERIAL</fieldset>
         <div>
+			<input th:if="${materiales.id != 0}" type="hidden" name="id" th:field="*{id}" />
             <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" disabled>
+            <input type="text" class="form-control" th:field="*{nombre}">
         </div>
         <div>
-            <label for="precio" class="form-label">Precio</label>
-            <input type="number" class="form-control" id="precio">
+            <label for="coste" class="form-label">Precio</label>
+            <input type="number" class="form-control" th:field="*{coste}">
             <label for="pvp" class="form-label">PVP</label>
-            <input type="number" class="form-control" id="pvp">
+            <input type="number" class="form-control" th:field="*{pvpMaterial}">
         </div>
         <div class="col-12">
             <button type="submit" class="btn btn-primary col-12">Editar</button>

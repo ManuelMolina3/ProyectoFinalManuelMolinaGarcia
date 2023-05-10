@@ -24,7 +24,7 @@ public class MaterialesController {
 	}
 	@GetMapping("/addMateriales")
 	public String mostrarFormMateriales(Model model) {
-		model.addAttribute("listaMateriales", new Materiales());
+		model.addAttribute("materiales", new Materiales());
 		return "materialesForm";
 	}
 	@PostMapping("/addMateriales/submit")
@@ -36,7 +36,7 @@ public class MaterialesController {
 	public String mostrarFormEdicionMateriales(@PathVariable("id") long id, Model model) {
 		Materiales materialesEditar= materialesServicio.findById(id);
 		if(materialesEditar != null) {
-			model.addAttribute("matreriales", materialesEditar);
+			model.addAttribute("materiales", materialesEditar);
 			return "editFormMateriales";
 		}else {
 			return "redirect:/listaMateriales";
