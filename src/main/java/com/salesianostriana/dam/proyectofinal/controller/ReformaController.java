@@ -23,19 +23,19 @@ public class ReformaController {
 	@GetMapping("/listaReformas")
 	public String listaReformas(Model model) {
 		model.addAttribute("listaReformas", reformaServicio.findAll());
-		return "listaReformas";
+		return "/admin/listaReformas";
 	}
 
 	@GetMapping("/addReforma")
 	public String mostrarFormReforma(Model model) {
 		model.addAttribute("reforma", new Reforma());
-		return "ReformaForm";
+		return "/admin/reformaForm";
 	}
 
 	@PostMapping("/addReforma/submit")
 	public String procesarFormReforma(@ModelAttribute("reforma") Reforma reforma) {
 		reformaServicio.add(reforma);
-		return "redirect:/listaReformas";
+		return "redirect:/admin/listaReformas";
 	}
 
 	@GetMapping("/editarReforma/{id}")
@@ -43,22 +43,22 @@ public class ReformaController {
 		Reforma reformaEditar = reformaServicio.findById(id);
 		if (reformaEditar != null) {
 			model.addAttribute("reforma", reformaEditar);
-			return "editFormReforma";
+			return "/admin/editFormReforma";
 		} else {
-			return "redirect:/listaReformas";
+			return "redirect:/admin/listaReformas";
 		}
 	}
 
 	@PostMapping("/editarReforma/submit")
 	public String procesarFormEditReforma(@ModelAttribute("reforma") Reforma reforma) {
 		reformaServicio.edit(reforma);
-		return "redirect:/listaReformas";
+		return "redirect:/admin/listaReformas";
 	}
 
 	@GetMapping("/borrarReforma/{id}")
 	public String deleteReformas(@PathVariable("id") long id, Model model) {
 		reformaServicio.deleteById(id);
-		return "redirect:/listaReformas";
+		return "redirect:/admin/listaReformas";
 	}
 
 }

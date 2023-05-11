@@ -1,9 +1,11 @@
-package com.salesianostriana.dam.proyectofinal.security;
+package com.salesianostriana.dam.proyectofinal.service;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import com.salesianostriana.dam.proyectofinal.repository.IUsuarioRepositorio;
 
 import lombok.RequiredArgsConstructor;
 

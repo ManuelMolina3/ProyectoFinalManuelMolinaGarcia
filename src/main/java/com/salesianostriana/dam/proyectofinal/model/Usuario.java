@@ -1,4 +1,4 @@
-package com.salesianostriana.dam.proyectofinal.security;
+package com.salesianostriana.dam.proyectofinal.model;
 
 import java.util.Collection;
 import java.util.List;
