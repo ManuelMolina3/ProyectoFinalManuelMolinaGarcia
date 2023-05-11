@@ -7,11 +7,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.salesianostriana.dam.proyectofinal.model.Materiales;
 import com.salesianostriana.dam.proyectofinal.service.MaterialesService;
 
+
 @Controller
+@RequestMapping("/admin")
 public class MaterialesController {
 
 	@Autowired
@@ -47,7 +50,7 @@ public class MaterialesController {
 		materialesServicio.edit(materiales);
 		return "redirect:/admin/listaMateriales";
 	}
-	@GetMapping("/deleteMateriales")
+	@GetMapping("/borarMateriales/{id}")
 	public String deleteMateriales(@PathVariable("id") long id, Model model){
 		materialesServicio.deleteById(id);
 		return "redirect:/admin/listaMateriales";

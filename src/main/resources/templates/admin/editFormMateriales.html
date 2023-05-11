@@ -13,7 +13,7 @@
     <title>Formulario de Materiales</title>
 </head>
 <body>
-    <form method="POST" th:action="@{/editarMateriales/submit}" th:object="${materiales}">
+    <form method="POST" th:action="@{/admin/editarMateriales/submit}" th:object="${materiales}">
         <fieldset>EDITAR UN MATERIAL</fieldset>
         <div>
 			<input th:if="${materiales.id != 0}" type="hidden" name="id" th:field="*{id}" />

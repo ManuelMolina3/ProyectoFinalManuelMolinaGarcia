@@ -43,25 +43,6 @@ public class SecurityConfig  {
 		
 	}
 	@Bean
-	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		
-		// Código que explicamos a continuación
-		
-		return http.build();
-	}
-	@Bean
-	public SecurityFilterChain securityFilterChain1(HttpSecurity http) throws Exception {
-		
-		http
-		.authorizeRequests()
-			.anyRequest().authenticated()
-			.and()
-		.formLogin()
-			.loginPage("/login")
-			.permitAll();		
-		return http.build();
-	}
-	@Bean
 	public SecurityFilterChain securityFilterChain2(HttpSecurity http) throws Exception {
 		http
 		.authorizeRequests()
@@ -73,8 +54,6 @@ public class SecurityConfig  {
 			.loginPage("/login")
 			.permitAll();
 		
-		// Añadimos esto para poder seguir accediendo a la consola de H2
-		// con Spring Security habilitado.
 		http.csrf().disable();
 		http.headers().frameOptions().disable();
 		

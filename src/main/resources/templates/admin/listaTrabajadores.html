@@ -15,7 +15,7 @@
 </head>
 
 <body>
-	<a th:href="@{/addTrabajador}">Nuevo trabajador</a>
+	<a th:href="@{/admin/addTrabajador}">Nuevo trabajador</a>
 	<table class="table table-striped table-hover">
 
 		<thead>
@@ -37,8 +37,8 @@
 				<td th:text="${trabajador.sueldoBase}">1500</td>
 				<td th:text="${trabajador.precioHoraExtra}">25</td>
 				<td>
-					<a href="#" th:href="@{/editarTrabajador/{id}(id=${trabajador.id_trabajador})}">Editar</a> |
-					<a href="#" th:href="@{/borrarTrabajadores/{id}(id=${trabajador.id_trabajador})}">Borrar</a>
+					<a href="#" th:href="@{/admin/editarTrabajador/{id}(id=${trabajador.id_trabajador})}">Editar</a> |
+					<a href="#" th:href="@{/admin/borrarTrabajadores/{id}(id=${trabajador.id_trabajador})}">Borrar</a>
 				</td>
 			</tr>
 		</tbody>
