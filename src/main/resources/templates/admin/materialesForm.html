@@ -10,12 +10,12 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
 		crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="../css/style.css">
+		<link rel="stylesheet" href="../../css/style.css" th:href="@{/css/style.css}">
 	<title>MarGarReformas</title>
 </head>
 
 <body>
-	<form method="post" th:action="@{/addMateriales/submit}" th:object="${materiales}">
+	<form method="post" th:action="@{/admin/addMateriales/submit}" th:object="${materiales}">
 		<fieldset>AÑADIR UN MATERIAL</fieldset>
 		<div>
 			<label for="nombre" class="form-label">Nombre</label>

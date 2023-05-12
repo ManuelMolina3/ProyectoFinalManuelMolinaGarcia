@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -30,8 +31,10 @@ public class Reforma {
 	@GeneratedValue
 	private Long id;
 	
-	private LocalDate fecha_inicio;
-	private LocalDate fecha_final;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private LocalDate fechaInicio;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private LocalDate fechaFinal;
 	private double presupuesto;
 	
 	@ManyToOne
