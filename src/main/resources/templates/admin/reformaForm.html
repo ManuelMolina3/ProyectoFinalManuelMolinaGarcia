@@ -10,13 +10,13 @@
     <title>Formulario para reformas</title>
 </head>
 <body>
-    <form method="POST" th:action="@{/addReforma/submit}" th:object="${reforma}">
+    <form method="POST" th:action="@{/admin/addReforma/submit}" th:object="${reforma}">
         <fieldset>ALTA PARA UNA REFORMA</fieldset>
         <div>
             <label for="fechaInicio" class="form-label" >Fecha de inicio</label>
-            <input type="date" class="form-control" th:field="*{fecha_inicio}" requiered>
+            <input type="date" class="form-control" th:field="*{fechaInicio}" requiered>
             <label for="fechaFin" class="form-label" >Fecha de fin</label>
-            <input type="date" class="form-control" th:field="*{fecha_final}" requiered>
+            <input type="date" class="form-control" th:field="*{fechaFinal}" requiered>
         </div>
         <div>
             <label for="presupuesto" class="form-label">Presupuesto</label>

@@ -13,7 +13,7 @@
     <title>Edición para trabajadores</title>
 </head>
 <body>
-    <form method="post" th:action="@{/editarTrabajador/submit}" th:object="${trabajador}">
+    <form method="post" th:action="@{/admin/editarTrabajador/submit}" th:object="${trabajador}">
       <fieldset>EDICIÓN PARA UN TRABAJADOR</fieldset>
         <div>
 			<input th:if="${trabajador.id_trabajador != 0}" type="hidden" name="id" th:field="*{id_trabajador}" />

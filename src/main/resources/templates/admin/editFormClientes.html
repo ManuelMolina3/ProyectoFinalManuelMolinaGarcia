@@ -10,7 +10,7 @@
     <title>edicion para un clientes</title>
 </head>
 <body>
-    <form method="POST" th:action="@{/editarCliente/submit}" th:object="${cliente}">
+    <form method="POST" th:action="@{/admin/editarCliente/submit}" th:object="${cliente}">
         <fieldset>EDITCIÓN DE UN CLIENTE</fieldset>
         <div>
 			<input th:if="${cliente.id_cliente != 0}" type="hidden" name="id" th:field="*{id_cliente}" />

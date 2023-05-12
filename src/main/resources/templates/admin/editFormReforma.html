@@ -13,14 +13,14 @@
     <title>Edición para reformas</title>
 </head>
 <body>
-    <form method="POST" th:action="@{/editarReforma/submit}" th:object="${reforma}">
+    <form method="POST" th:action="@{/admin/editarReforma/submit}" th:object="${reforma}">
         <fieldset>EDICIÓN PARA UNA REFORMA</fieldset>
         <div>
 			<input th:if="${reforma.id != 0}" type="hidden" name="id" th:field="*{id}" />
             <label for="fechaInicio" class="form-label" >Fecha de inicio</label>
             <input type="date" class="form-control" th:field="*{fechaInicio}">
             <label for="fechaFin" class="form-label" >Fecha de fin</label>
-            <input type="date" class="form-control" th:field="*{fechaFin}">
+            <input type="date" class="form-control" th:field="*{fechaFinal}">
         </div>
         <div>
             <label for="presupuesto" class="form-label">Presupuesto</label>

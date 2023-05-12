@@ -50,7 +50,7 @@ public class MaterialesController {
 		materialesServicio.edit(materiales);
 		return "redirect:/admin/listaMateriales";
 	}
-	@GetMapping("/borarMateriales/{id}")
+	@GetMapping("/borrarMateriales/{id}")
 	public String deleteMateriales(@PathVariable("id") long id, Model model){
 		materialesServicio.deleteById(id);
 		return "redirect:/admin/listaMateriales";

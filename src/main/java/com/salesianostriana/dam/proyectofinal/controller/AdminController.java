@@ -8,9 +8,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class AdminController {
 
 		
-		@GetMapping("/")
-		public String index() {
-			return "/admin/listaMateriales";
+		@GetMapping("/admin")
+		public String accederComoAdmin() {
+			return "/admin/PaginaPrincipalAdmin";
+		}
+		@GetMapping("/user")
+		public String accederComoUser() {
+			return "/user/mireconstruccion";
 		}
 
 }
