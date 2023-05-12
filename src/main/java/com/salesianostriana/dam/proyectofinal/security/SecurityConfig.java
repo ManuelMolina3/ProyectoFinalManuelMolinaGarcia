@@ -23,8 +23,6 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 
 import lombok.RequiredArgsConstructor;
 
-
-
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
@@ -46,6 +44,22 @@ public class SecurityConfig {
 		
 		
 	}
+	
+	/*@Bean
+    public InMemoryUserDetailsManager userDetailsService() {
+        UserDetails user = User.builder()
+        		.username("admin")
+        		.password("{noop}admin")
+        		.roles("ADMIN")
+            .build();
+        return new InMemoryUserDetailsManager(user);
+    }*/
+	
+	/*
+	@Bean
+	public UserDetailsService userDetailsService() {
+		return new UserDetailsServiceImpl();
+	}*/
 	
 	
 	
@@ -110,4 +124,3 @@ public class SecurityConfig {
     }
 
 }
-
