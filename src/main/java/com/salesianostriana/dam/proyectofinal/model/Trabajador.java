@@ -51,5 +51,12 @@ public class Trabajador {
 			)
 	
 	private List<Reforma> trabajaEnReforma = new ArrayList <>();
+	
+	@OneToMany(mappedBy="trabajador", fetch= FetchType.EAGER)
+	@Builder.Default
+	@EqualsAndHashCode.Exclude
+	@ToString.Exclude
+	private List<ParteTrabajador> parteTrabajador= new ArrayList<>();
+	
 
 }

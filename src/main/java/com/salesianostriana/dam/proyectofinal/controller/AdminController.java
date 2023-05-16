@@ -16,5 +16,12 @@ public class AdminController {
 		public String accederComoUser() {
 			return "/user/mireconstruccion";
 		}
-
+		@GetMapping("/")
+		public String accederPaginaPrincipal(){
+			return "paginaPrincipal";
+		}
+		@GetMapping("/login")
+		public String accederLogueo() {
+			return "login";
+		}
 }
