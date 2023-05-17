@@ -3,14 +3,15 @@ package com.salesianostriana.dam.proyectofinal.model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-import javax.persistence.Entity;
+import javax.persistence.Embeddable;
+
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-@Entity
+@Embeddable
 public class ParteTrabajadorPK implements Serializable{/**
 	 * 
 	 */
