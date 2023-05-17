@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.salesianostriana.dam.proyectofinal.model.Reforma;
+import com.salesianostriana.dam.proyectofinal.service.ClienteService;
 import com.salesianostriana.dam.proyectofinal.service.ReformaService;
+import com.salesianostriana.dam.proyectofinal.service.TrabajadorService;
 
 
 @Controller
@@ -19,6 +21,12 @@ public class ReformaController {
 
 	@Autowired
 	private ReformaService reformaServicio;
+	
+	@Autowired
+	private TrabajadorService trabajadorServicio;
+	
+	@Autowired
+	private ClienteService clienteServicio;
 
 	public ReformaController(ReformaService reformaServicio) {
 		this.reformaServicio = reformaServicio;
@@ -33,6 +41,8 @@ public class ReformaController {
 	@GetMapping("/addReforma")
 	public String mostrarFormReforma(Model model) {
 		model.addAttribute("reforma", new Reforma());
+		model.addAttribute("jefesDeObra", trabajadorServicio.findAll());
+		model.addAttribute("propietarios", clienteServicio.findAll());
 		return "/admin/reformaForm";
 	}
 
@@ -47,6 +57,8 @@ public class ReformaController {
 		Reforma reformaEditar = reformaServicio.findById(id);
 		if (reformaEditar != null) {
 			model.addAttribute("reforma", reformaEditar);
+			model.addAttribute("jefesDeObra", trabajadorServicio.findAll());
+			model.addAttribute("propietarios", clienteServicio.findAll());
 			return "/admin/editFormReforma";
 		} else {
 			return "redirect:/admin/listaReformas";

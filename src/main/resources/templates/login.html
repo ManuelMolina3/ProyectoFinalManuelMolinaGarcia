@@ -18,6 +18,10 @@
 	<form method="POST" action="#" th:action="@{/login}" class="logueo">
 		<input type="text" id="username" name="username" placeholder="Username" required autofocus>
 		<input type="password" name="password" id="password" placeholder="Password" required>
+		<div>
+          <input type="checkbox" class="form-check-input" id="norobot" required>
+          <label class="form-check-label" for="norobot">No soy un robot</label></br></br>
+        </div>
 		<input type="submit" name="enviar" value="Enviar" />
 	</form>
 </body>

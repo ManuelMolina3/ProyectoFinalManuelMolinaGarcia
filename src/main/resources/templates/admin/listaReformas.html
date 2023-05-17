@@ -16,6 +16,7 @@
 
 <body>
 	<a th:href="@{/admin/addReforma}">Añadir nueva reforma</a>
+	 <nav th:replace="~{fragment/menu::menu}"></nav>
 	<table class="table table-striped table-hover">
 
 		<thead>
@@ -24,6 +25,8 @@
 				<th scope="col">Fecha de inicio</th>
 				<th scope="col">Fecha de Fin</th>
 				<th scope="col">Presupuesto</th>
+				<th scope="col">Jefe de obra</th>
+				<th scope="col">Propietario</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -32,6 +35,8 @@
 				<td th:text="${reforma.fechaInicio}">fecha de inicio</td>
 				<td th:text="${reforma.fechaFinal}">fecha de final</td>
 				<td th:text="${reforma.presupuesto}">presupuesto</td>
+				<td th:text="${reforma.jefeDeObra.nombre}"> Jefe de obra</td>
+				<td th.text="${reforma.propietario.nombre}">Propietario</td>
 				<td>
 					<a th:href="@{/admin/editarReforma/{id}(id=${reforma.id})}">Editar</a> |
 					<a th:href="@{/admin/borrarReforma/{id}(id=${reforma.id})}">Borrar</a> |
