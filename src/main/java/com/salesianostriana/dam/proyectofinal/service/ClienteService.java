@@ -10,10 +10,12 @@ import com.salesianostriana.dam.proyectofinal.repository.IClienteRepository;
 @Service
 public class ClienteService extends BaseService<Cliente, Long, IClienteRepository>{
 
-	private IClienteRepository repositorioCliente;
+
 	
 	public List<Cliente> findByNombre(String nombre){
-		return repositorioCliente.findByNombreContainingIgnoreCase(nombre);
+		return this.repositorio.findByNombreContainingIgnoreCase(nombre);
 	}
+	
+	
 
 }
