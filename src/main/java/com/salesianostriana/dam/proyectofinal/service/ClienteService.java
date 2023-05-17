@@ -12,8 +12,8 @@ public class ClienteService extends BaseService<Cliente, Long, IClienteRepositor
 
 
 	
-	public List<Cliente> findByNombre(String nombre){
-		return this.repositorio.findByNombreContainingIgnoreCase(nombre);
+	public List<Cliente> findByCliente(String busqueda){
+		return this.findByCliente(busqueda);
 	}
 	
 	

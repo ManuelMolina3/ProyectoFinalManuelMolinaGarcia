@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.salesianostriana.dam.proyectofinal.model.Cliente;
+import com.salesianostriana.dam.proyectofinal.search.SearchCliente;
 import com.salesianostriana.dam.proyectofinal.service.ClienteService;
 
 @Controller
@@ -27,6 +28,7 @@ public class ClienteController {
 	@GetMapping("/listaClientes")
 	public String listaClientes(Model model) {
 		model.addAttribute("listaClientes", clienteServicio.findAll());
+		model.addAttribute("SearchCliente", new SearchCliente());
 		return "/admin/listaClientes";
 	}
 
@@ -63,6 +65,13 @@ public class ClienteController {
 	public String deleteCliente(@PathVariable("id") long id) {
 		clienteServicio.deleteById(id);
 		return "redirect:/admin/listaClientes";
+	}
+
+	@PostMapping("/buscarCliente")
+	public String searchProducto(@ModelAttribute("searchForm") SearchCliente searchCliente, Model model) {
+		model.addAttribute("clientes", clienteServicio.findByCliente(searchCliente.getSearchCliente()));
+
+		return "/admin/listaClientes";
 	}
 
 }
