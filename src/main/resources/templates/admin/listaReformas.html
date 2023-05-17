@@ -36,7 +36,7 @@
 				<td th:text="${reforma.fechaFinal}">fecha de final</td>
 				<td th:text="${reforma.presupuesto}">presupuesto</td>
 				<td th:text="${reforma.jefeDeObra.nombre}"> Jefe de obra</td>
-				<td th.text="${reforma.propietario.nombre}">Propietario</td>
+				<td th:text="${reforma.propietario.nombre}">Propietario</td>
 				<td>
 					<a th:href="@{/admin/editarReforma/{id}(id=${reforma.id})}">Editar</a> |
 					<a th:href="@{/admin/borrarReforma/{id}(id=${reforma.id})}">Borrar</a> |
