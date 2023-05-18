@@ -26,9 +26,9 @@ public class ClienteController {
 	}
 
 	@GetMapping("/listaClientes")
-	public String listaClientes(Model model) {
+	public String listaClientes(Model model ) {
 		model.addAttribute("listaClientes", clienteServicio.findAll());
-		model.addAttribute("SearchCliente", new SearchCliente());
+		model.addAttribute("SearchClienteForm", new SearchCliente());
 		return "/admin/listaClientes";
 	}
 
@@ -68,8 +68,8 @@ public class ClienteController {
 	}
 
 	@PostMapping("/buscarCliente")
-	public String searchProducto(@ModelAttribute("searchForm") SearchCliente searchCliente, Model model) {
-		model.addAttribute("clientes", clienteServicio.findByCliente(searchCliente.getSearchCliente()));
+	public String searchProducto(@ModelAttribute("searchClienteForm") SearchCliente searchCliente, Model model) {
+		model.addAttribute("clientes", clienteServicio.findByNombreContainingIgnoreCase(searchCliente.getSearchCliente()));
 
 		return "/admin/listaClientes";
 	}
