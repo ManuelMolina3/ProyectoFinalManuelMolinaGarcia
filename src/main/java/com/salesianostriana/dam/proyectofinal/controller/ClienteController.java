@@ -69,7 +69,8 @@ public class ClienteController {
 
 	@PostMapping("/buscarCliente")
 	public String searchProducto(@ModelAttribute("searchClienteForm") SearchCliente searchCliente, Model model) {
-		model.addAttribute("clientes", clienteServicio.findByClientes(searchCliente.getSearchCliente()));
+		model.addAttribute("listaClientes", clienteServicio.findByClientes(searchCliente.getSearchCliente()));
+		System.out.println(clienteServicio.findByClientes(searchCliente.getSearchCliente()));
 
 		return "/admin/listaClientes";
 	}

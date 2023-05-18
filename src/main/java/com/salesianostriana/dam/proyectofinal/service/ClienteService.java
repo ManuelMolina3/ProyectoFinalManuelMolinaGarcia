@@ -16,7 +16,9 @@ public class ClienteService extends BaseService<Cliente, Long, IClienteRepositor
 
 	
 	public List<Cliente> findByClientes(String busqueda){
+
 		return repo.findByAllContainingIgnoreCase(busqueda);
+
 	}
 	
 	

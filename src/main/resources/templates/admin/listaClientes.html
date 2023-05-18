@@ -16,8 +16,8 @@
 
 <body>
 
-	<a th:href="@{/admin/addCliente}">Añadir nuevo cliente</a>
-	<form action="#" th:action="@{/admin/buscarCliente}" th:object="${SearchClienteForm}" method="POST">
+	
+	<form action="#" th:action="@{buscarCliente}" th:object="${searchClienteForm}" method="POST">
 		<input type="text" name="busqueda" placeholder="Buscar cliente"/>
 		<button class="btn- btn-danger" type="submit" style="padding: 4px;">
 			<span class="glyphicon glyphicon-search"></span>
@@ -33,6 +33,7 @@
 				<th scope="col">Ciudad</th>
 				<th scope="col">Teléfono</th>
 				<th scope="col">Correo electronico</th>
+				<th><a th:href="@{/admin/addCliente}"></a></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -45,8 +46,8 @@
 				<td th:text="${cliente.ciudad}">Ciudad</td>
 				<td th:text="${cliente.telefono}">Telefono</td>
 				<td th:text="${cliente.email}">Email</td>
-				<td><a th:href="@{/admin/editarCliente/{id}(id=${cliente.id_cliente})}">Editar</a></td>
-				<td><a th:href="@{/admin/borrarCliente/{id}(id=${cliente.id_cliente})}">Borrar</a></td>
+				<td><a th:href="@{/admin/editarCliente/{id}(id=${cliente.id_cliente})}"></a></td>
+				<td><a th:href="@{/admin/borrarCliente/{id}(id=${cliente.id_cliente})}"></a></td>
 		</tbody>
 	</table>
 </body>
