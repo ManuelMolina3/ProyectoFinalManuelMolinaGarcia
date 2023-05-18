@@ -17,7 +17,7 @@
 <body>
 
 	<a th:href="@{/admin/addCliente}">Añadir nuevo cliente</a>
-	<form action="#" th:action="@{buscarCliente}" th:object="${SearchClienteForm}" method="POST">
+	<form action="#" th:action="@{/admin/buscarCliente}" th:object="${SearchClienteForm}" method="POST">
 		<input type="text" name="busqueda" placeholder="Buscar cliente"/>
 		<button class="btn- btn-danger" type="submit" style="padding: 4px;">
 			<span class="glyphicon glyphicon-search"></span>

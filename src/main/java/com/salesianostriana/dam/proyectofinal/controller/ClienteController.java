@@ -69,7 +69,7 @@ public class ClienteController {
 
 	@PostMapping("/buscarCliente")
 	public String searchProducto(@ModelAttribute("searchClienteForm") SearchCliente searchCliente, Model model) {
-		model.addAttribute("clientes", clienteServicio.findByNombreContainingIgnoreCase(searchCliente.getSearchCliente()));
+		model.addAttribute("clientes", clienteServicio.findByClientes(searchCliente.getSearchCliente()));
 
 		return "/admin/listaClientes";
 	}
