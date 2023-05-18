@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.salesianostriana.dam.proyectofinal.model.Trabajador;
 import com.salesianostriana.dam.proyectofinal.service.TrabajadorService;
@@ -64,5 +65,10 @@ public class TrabajadorController {
 	public String deleteTrabajadores(@PathVariable("id") long id, Model model) {
 		trabajadorServicio.deleteById(id);
 		return "redirect:/admin/listaTrabajadores";
+	}
+	@GetMapping("/buscarTrabajador")
+	public String searchTrabajador(@RequestParam("busqueda") String busqueda, Model model) {
+		model.addAttribute("listaTrabajadores", trabajadorServicio.findByTrabajador(busqueda));
+		return "/admin/listaTrabajadores";
 	}
 }

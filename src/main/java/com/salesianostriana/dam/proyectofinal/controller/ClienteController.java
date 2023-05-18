@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.salesianostriana.dam.proyectofinal.model.Cliente;
-import com.salesianostriana.dam.proyectofinal.search.SearchCliente;
 import com.salesianostriana.dam.proyectofinal.service.ClienteService;
 
 @Controller
@@ -28,7 +28,6 @@ public class ClienteController {
 	@GetMapping("/listaClientes")
 	public String listaClientes(Model model ) {
 		model.addAttribute("listaClientes", clienteServicio.findAll());
-		model.addAttribute("SearchClienteForm", new SearchCliente());
 		return "/admin/listaClientes";
 	}
 
@@ -67,11 +66,9 @@ public class ClienteController {
 		return "redirect:/admin/listaClientes";
 	}
 
-	@PostMapping("/buscarCliente")
-	public String searchProducto(@ModelAttribute("searchClienteForm") SearchCliente searchCliente, Model model) {
-		model.addAttribute("listaClientes", clienteServicio.findByClientes(searchCliente.getSearchCliente()));
-		System.out.println(clienteServicio.findByClientes(searchCliente.getSearchCliente()));
-
+	@GetMapping("/buscarCliente")
+	public String searchCliente(@RequestParam("busqueda") String busqueda, Model model) {
+		model.addAttribute("listaClientes", clienteServicio.findByClientes(busqueda));
 		return "/admin/listaClientes";
 	}
 

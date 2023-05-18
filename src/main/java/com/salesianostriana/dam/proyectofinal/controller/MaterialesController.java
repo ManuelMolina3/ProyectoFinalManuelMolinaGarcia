@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.salesianostriana.dam.proyectofinal.model.Materiales;
 import com.salesianostriana.dam.proyectofinal.service.MaterialesService;
@@ -54,6 +55,11 @@ public class MaterialesController {
 	public String deleteMateriales(@PathVariable("id") long id, Model model){
 		materialesServicio.deleteById(id);
 		return "redirect:/admin/listaMateriales";
+	}
+	@GetMapping("/buscarMateriales")
+	public String searchMateriales(@RequestParam("busqueda") String busqueda, Model model) {
+		model.addAttribute("listaMateriales", materialesServicio.findByMateriales(busqueda));
+		return "/admin/listaMateriales";
 	}
 	
 }
