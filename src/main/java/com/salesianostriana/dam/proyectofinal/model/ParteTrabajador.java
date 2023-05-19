@@ -41,7 +41,7 @@ public class ParteTrabajador {
 		this.trabajador = t;
 	}
 
-	public void removeFromAlumno(Trabajador t) {
+	public void removeFromTrabajador(Trabajador t) {
 		t.getParteTrabajador().remove(this);
 		this.trabajador = null;
 	}
