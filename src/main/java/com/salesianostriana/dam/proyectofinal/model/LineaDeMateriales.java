@@ -28,6 +28,9 @@ public class LineaDeMateriales {
 	@GeneratedValue
 	private Long id_lineaDeMateriales;
 	
+	private int cantidad;
+	
+	
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
 	@Builder.Default
@@ -36,7 +39,6 @@ public class LineaDeMateriales {
 				cascade= CascadeType.ALL,
 				orphanRemoval= true)
 	private List<Materiales> materiales = new ArrayList<>();
-	
 	
 	
 }
