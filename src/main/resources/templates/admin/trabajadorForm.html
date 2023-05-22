@@ -10,30 +10,45 @@
     <title>Formulario para trabajadores</title>
 </head>
 <body>
-    <form method="post" th:action="@{/admin/addTrabajador/submit}" th:object="${trabajador}">
-      <fieldset>ALTA PARA UN TRABAJADOR</fieldset>
-        <div>
-          <label for="nombre" class="form-label">Nombre</label>
-          <input type="text" class="form-control" th:field="*{nombre}" requiered>
-          <label for="apellidos" class="form-label">Apellidos</label>
-          <input type="text" class="form-control" th:field="*{apellido}" requiered>
-        </div>
-        <div>
-          <label for="email" class="form-label">Correo electronico</label>
-          <input type="email" class="form-control" th:field="*{email}" requiered>
-          <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" th:field="*{password}" requiered>
-        </div>
-        <div>
+  <div class="container-fluid form-section">
+    <div class="row">
+      <div class="col-md-6 p-0">
+        <img src="/img/formulario.jpg" alt="Imagen de fondo">
+      </div>
+      <div class="col-md-6 bg-gray d-flex justify-content-center align-items-center">
+        <form method="post" th:action="@{/admin/addTrabajador/submit}" th:object="${trabajador}" class="w-75">
+          <h1 class="text-center mb-4">Alta de una reforma</h1>
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" th:field="*{nombre}" requiered>
+          </div>
+          <div class="mb-3">
+            <label for="apellidos" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" th:field="*{apellido}" requiered>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo electronico</label>
+            <input type="email" class="form-control" th:field="*{email}" requiered>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" th:field="*{password}" requiered>
+          </div>
+          <div class="mb-3">
             <label for="sueldoBase" class="form-label">Sueldo base</label>
             <input type="number" class="form-control" th:field="*{sueldoBase}" requiered>
+          </div>
+          <div class="mb-3">
             <label for="precioHorasextra" class="form-label">Precio de las horas extra</label>
             <input type="number" class="form-control" th:field="*{precioHoraExtra}" requiered>
-        </div>
-        <div class="col-12">
+          </div>
+          <div class="col-12">
             <button type="submit" class="btn btn-primary col-12">Añadir</button>
         </div>
-      </form>
+        </form>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
 <!-- FALTA METERLE JAVASCRIPT PARA QUE APAREZCA EL OJO PARA EL TEMA DE LA CONTRASEÑA-->

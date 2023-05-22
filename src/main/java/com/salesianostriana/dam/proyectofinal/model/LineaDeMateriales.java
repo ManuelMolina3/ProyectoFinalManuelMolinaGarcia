@@ -38,5 +38,4 @@ public class LineaDeMateriales {
 	private List<Materiales> materiales = new ArrayList<>();
 	
 	
-	
 }

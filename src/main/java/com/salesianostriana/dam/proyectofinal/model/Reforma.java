@@ -16,6 +16,7 @@ import javax.persistence.ManyToOne;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -25,48 +26,52 @@ import lombok.ToString;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Reforma {
-	
+
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fechaInicio;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fechaFinal;
 	private double presupuesto;
-	
+
 	@ManyToOne
-	@JoinColumn(foreignKey = @ForeignKey(name= "fk_reforma_trabajador"))
+	@JoinColumn(foreignKey = @ForeignKey(name = "fk_reforma_trabajador"))
 	private Trabajador jefeDeObra;
-	
-	public void addToReforma (Trabajador jefeDeObra) {
-		
-		this.jefeDeObra= jefeDeObra;
+
+	public void addToReforma(Trabajador jefeDeObra) {
+
+		this.jefeDeObra = jefeDeObra;
 		jefeDeObra.getReformas().add(this);
 	}
-	public void removeFromReforma (Trabajador jefeDeObra) {
+
+	public void removeFromReforma(Trabajador jefeDeObra) {
 		jefeDeObra.getReformas().remove(this);
-		this.jefeDeObra= null;
+		this.jefeDeObra = null;
 	}
-	
+
 	@ManyToOne
-	@JoinColumn(foreignKey= @ForeignKey(name= "fk_reforma_cliente"))
+	@JoinColumn(foreignKey = @ForeignKey(name = "fk_reforma_cliente"))
 	private Cliente propietario;
-	
+
 	public void addToReforma(Cliente propietario) {
-		this.propietario= propietario;
+		this.propietario = propietario;
 		propietario.getReformas().add(this);
 	}
-	public void removeFromReforma (Cliente propietario) {
+
+	public void removeFromReforma(Cliente propietario) {
 		propietario.getReformas().remove(this);
-		this.propietario= null;
+		this.propietario = null;
 	}
-	
-	@EqualsAndHashCode.Exclude
+
 	@ToString.Exclude
-	@ManyToMany(mappedBy="trabajaEnReforma", fetch = FetchType.EAGER)
+	@EqualsAndHashCode.Exclude
+	@Builder.Default
+	@ManyToMany(mappedBy = "trabajaEnReforma", fetch = FetchType.EAGER)
 	private List<Trabajador> ReformaTrabajadapor = new ArrayList<>();
-	
+
 }
