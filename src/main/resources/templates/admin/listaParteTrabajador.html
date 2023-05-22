@@ -38,8 +38,9 @@
 				<td th:text="${parteTrabajador.numHoras}">presupuesto</td>
 				<td th:text="${parteTrabajador.numHorasExtra}"> Jefe de obra</td>
 				<td>
-					<a th:href="@{/admin/editParteTrabajador/{id}(id=${})}"><i class="bi bi-pen-fill"></i></a> |
-					<a th:href="@{/admin/borrarParteTrabajador/{id}(id=${reforma.id})}"><i class="bi bi-trash3-fill"></i></a> |
+					<a th:href="@{/admin/editParte/{id_t}/{id_r}/{fe}(id_t=${parteTrabajador.parteTrabajadorPK.trabajador_id},id_r=${parteTrabajador.parteTrabajadorPK.reforma_id}, fe=${parteTrabajador.parteTrabajadorPK.fecha})}"><i class="bi bi-pen-fill"></i></a> |
+					
+					<a th:href="@{/admin/borrarParte/{id_t}/{id_r}/{fe}(id_t=${parteTrabajador.parteTrabajadorPK.trabajador_id},id_r=${parteTrabajador.parteTrabajadorPK.reforma_id}, fe=${parteTrabajador.parteTrabajadorPK.fecha})}"><i class="bi bi-trash3-fill"></i></a> |
 				</td>
 			</tr>
 		</tbody>

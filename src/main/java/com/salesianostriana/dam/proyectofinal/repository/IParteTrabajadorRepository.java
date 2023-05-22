@@ -6,5 +6,6 @@ import com.salesianostriana.dam.proyectofinal.model.ParteTrabajador;
 import com.salesianostriana.dam.proyectofinal.model.ParteTrabajadorPK;
 
 public interface IParteTrabajadorRepository extends JpaRepository<ParteTrabajador, ParteTrabajadorPK>{
+	
 
 }
