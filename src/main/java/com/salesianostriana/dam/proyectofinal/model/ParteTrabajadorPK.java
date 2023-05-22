@@ -4,13 +4,15 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 import javax.persistence.Embeddable;
+import org.springframework.format.annotation.DateTimeFormat;
 
-
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Embeddable
 public class ParteTrabajadorPK implements Serializable{/**
 	 * 
@@ -21,4 +23,5 @@ public class ParteTrabajadorPK implements Serializable{/**
 	private long reforma_id;
 	private LocalDate fecha;
 
+	
 }
