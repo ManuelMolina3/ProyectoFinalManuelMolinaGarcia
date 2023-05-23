@@ -22,7 +22,7 @@ public class ParteTrabajadorService extends BaseService<ParteTrabajador, ParteTr
 	@Override
 	public ParteTrabajador add(ParteTrabajador parteTrabajador) {
 		if (parteTrabajador.getTrabajador() == null) {
-			parteTrabajador.setTrabajador(trabajadorService.findById(parteTrabajador.getParteTrabajadorPK().getTrabajador_id()));
+			parteTrabajador.setTrabajador((trabajadorService.findById(parteTrabajador.getParteTrabajadorPK().getTrabajador_id())));
 		}
 		if(parteTrabajador.getReforma() == null) {
 			parteTrabajador.setReforma(reformaService.findById(parteTrabajador.getParteTrabajadorPK().getReforma_id()));

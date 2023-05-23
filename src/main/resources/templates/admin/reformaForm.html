@@ -11,6 +11,7 @@
 		integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
 		crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="../../css/style.css" th:href="@{/css/style.css}">
+  <script th:src="@{/js/validacionReforma.js}" defer></script>
 	<title>Formulario para reformas</title>
 </head>
 
@@ -21,20 +22,22 @@
         <img th:src="@{/img/formulario.jpg}" alt="Imagen de fondo">
       </div>
       <div class="col-md-6 bg-gray d-flex justify-content-center align-items-center">
-        <form method="POST" th:action="@{/admin/addReforma/submit}" th:object="${reforma}" class="w-75">
+        <form method="POST" th:action="@{/admin/addReforma/submit}" th:object="${reforma}" class="w-75" id="formulario">
           <h1 class="text-center mb-4">Alta de una reforma</h1>
           <div class="mb-3">
             <label for="fechaInicio" class="form-label">Fecha de inicio</label>
-            <input type="date" class="form-control" th:field="*{fechaInicio}" requiered>
+            <input type="date" class="form-control" th:field="*{fechaInicio}" id="fechaInicio" required>
           </div>
           <div class="mb-3">
             <label for="fechaFin" class="form-label">Fecha de fin</label>
-            <input type="date" class="form-control" th:field="*{fechaFinal}" requiered>
+            <input type="date" class="form-control" th:field="*{fechaFinal}" id="fechaFinal"required>
+            <p id="errorForm">Ponga una fecha valida</p>
           </div>
+
           <div class="mb-3">
             <label for="presupuesto" class="form-label">Presupuesto</label>
             <input type="number" class="form-control" th:field="*{presupuesto}" aria-describedby="presupuestoHelp"
-              requiered>
+              required>
             <div id="presupuestoHelp" class="form-text">Introduzca el presupuesto de la reforma</div>
           </div>
           <div class="mb-3">

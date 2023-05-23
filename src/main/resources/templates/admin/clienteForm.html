@@ -22,7 +22,7 @@
           <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
             <input type="text" class="form-control" th:field="*{nombre}" requiered>
-            <p></p>
+            
           </div>
           <div class="mb-3">
             <label for="apellidos" class="form-label">Apellidos</label>
@@ -30,7 +30,8 @@
           </div>
           <div class="mb-3">
             <label for="dni" class="form-label">DNI</label>
-            <input type="text" class="form-control" th:field="*{dni}" requiered>
+            <input type="text" class="form-control" th:field="*{dni}" id="dni" requiered>
+            <p class="errorForm">Indique un dni valido</p>
           </div>
           <div class="mb-3">
             <label for="ciudad" class="form-label">Ciudad</label>
@@ -38,14 +39,16 @@
           </div>
           <div class="mb-3">
             <label for="telefono" class="form-label">Teléfono</label>
-            <input type="text" class="form-control" th:field="*{telefono}" requiered>
+            <input type="text" class="form-control" th:field="*{telefono}" id="telefono" requiered>
+            <p class="errorForm">Indique un teléfono correcto</p>
           </div>
           <div class="mb-3">
             <label for="email" class="form-label">Correo electronico</label>
-            <input type="email" class="form-control" th:field="*{email}" requiered>
+            <input type="email" class="form-control" th:field="*{email}" id="email" requiered>
+            <p class="errorForm">Indique un email correcto</p>
           </div>
           <div class="col-12">
-            <button type="submit" class="btn btn-primary col-12">Añadir</button>
+            <input type="submit" class="btn btn-primary col-12" value="Añadir">
         </div>
         </form>
       </div>

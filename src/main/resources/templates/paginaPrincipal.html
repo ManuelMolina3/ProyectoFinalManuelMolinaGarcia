@@ -17,11 +17,43 @@
 <body class="paginaPrincipal">
 
 	<div class="container">
-		<a th:href="@{/login}"><i class="bi bi-box-arrow-in-right"></i></a>
-		<h1 class="fw-light text-center text-lg-start mt-4 mb-0">MARGAR REFORMAS</h1>
+		
+		<h1 class="fw-light text-center text-lg-start mt-4 mb-0">MARGAR REFORMAS <a th:href="@{/login}"><i class="bi bi-box-arrow-in-right" style="float: right;"></i></a></h1>
 
 		<hr class="mt-2 mb-5">
 
+		<div class="sobreNosotros">
+			<h2>Sobre nosotros</h2>
+			<p>Bienvenidos a MarGar Reformas, una empresa de reformas con más de 20 años de experiencia en el sector.
+				Nos especializamos en ofrecer soluciones integrales para la reforma de viviendas, locales comerciales y
+				oficinas. Nuestro objetivo es ayudar a nuestros clientes a crear espacios funcionales, modernos y
+				atractivos, que se adapten a sus necesidades y estilo de vida.</p>
+
+			<p>En MarGar Reformas, nos apasiona lo que hacemos y estamos comprometidos con la excelencia en cada detalle
+				de nuestros proyectos. Nos enorgullece ser una empresa líder en el sector de la reforma, gracias a nuestra
+				larga trayectoria y experiencia en el mercado. Además, ofrecemos un servicio personalizado y eficiente,
+				que se adapta a las necesidades de cada cliente.</p>
+
+			<p>Nuestro equipo de profesionales está altamente capacitado y experimentado en todas las áreas de la
+				reforma, desde el diseño hasta la ejecución del proyecto. Nos aseguramos de que cada etapa de la reforma sea
+				planificada y ejecutada con la máxima calidad y puntualidad. Además, ofrecemos un servicio integral que
+				incluye la gestión de todos los trámites necesarios para la reforma de su propiedad.</p>
+
+			<p>En MarGar Reformas, entendemos que cada proyecto es único y tiene sus propias necesidades y requisitos.
+				Por eso, nos aseguramos de escuchar atentamente a nuestros clientes para entender sus necesidades y
+				expectativas. Nos aseguramos de mantener una comunicación fluida y transparente en todo momento, para
+				que nuestros clientes estén informados en todo momento sobre el progreso de su proyecto.</p>
+
+			<p>Además, en MarGar Reformas trabajamos con los mejores proveedores y materiales del mercado, para
+				garantizar la calidad y durabilidad de nuestros trabajos. Utilizamos herramientas y tecnologías avanzadas para
+				optimizar los procesos y reducir los plazos de entrega. Todo esto, combinado con nuestra experiencia y
+				compromiso con la excelencia, nos permite garantizar resultados de alta calidad y en tiempo y forma.</p>
+
+			<p>En MarGar Reformas, nos tomamos muy en serio la satisfacción de nuestros clientes. Por eso, nos
+				esforzamos por garantizar resultados de alta calidad y en tiempo y forma. No solo somos expertos en el sector de la
+				reforma, sino que también nos apasiona lo que hacemos y nos aseguramos de que cada proyecto se realice
+				con la máxima calidad y cuidado.</p>
+		</div>
 		<div class="row text-center text-lg-start">
 
 			<div class="col-lg-3 col-md-4 col-6">
@@ -76,17 +108,20 @@
 			</div>
 			<div class="col-lg-3 col-md-4 col-6">
 				<a href="#" class="d-block mb-4 h-100">
-					<img class="img-fluid img-thumbnail" src="../img/reforma11.jpg" alt="foto de la decimo primera reforma">
+					<img class="img-fluid img-thumbnail" src="../img/reforma11.jpg"
+						alt="foto de la decimo primera reforma">
 				</a>
 			</div>
 			<div class="col-lg-3 col-md-4 col-6">
 				<a href="#" class="d-block mb-4 h-100">
-					<img class="img-fluid img-thumbnail" src="../img/reforma12.jpg" alt="foto de la decimo segunda reforma">
+					<img class="img-fluid img-thumbnail" src="../img/reforma12.jpg"
+						alt="foto de la decimo segunda reforma">
 				</a>
 			</div>
 		</div>
 
 	</div>
+
 	<footer>
 		<nav th:replace="~{fragment/footer::footer}"></nav>
 	</footer>

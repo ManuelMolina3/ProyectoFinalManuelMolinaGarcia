@@ -27,27 +27,40 @@ fieldset {
 }
 
 footer {
-	background-color: bisque;
+	background-color: dimgray;
 	font-size: 16px;
 	padding: auto;
+		font-weight: 400;
 }
 
 table {
 	width: 100%;
 	border: 5px solid black;
 	margin: 0 auto;
-	background-color: bisque;
+	background-color: dimgray;
 	color: black;
 	font-family: Arial;
 	padding: 1%;
+	font-weight: 400;
 }
 
 body {
-	background-color: grey;
+	background-color: gray;
 }
 
 nav {
-	background-color: bisque;
+	background-color: dimgray;
 	font-size: 16px;
 	padding: auto;
+}
+.sobreNosotros{
+	width:80%;
+	background-color: dimgray;
+	color: black;
+	border-radius: 4px;
+	border:dimgray solid;
+	padding: 0%;
+	border-bottom: 5px;
+	margin:0 auto;
+	font-weight: 600;
 }

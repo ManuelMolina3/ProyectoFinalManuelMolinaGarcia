@@ -3,6 +3,7 @@ package com.salesianostriana.dam.proyectofinal.service;
 import java.util.List;
 
 
+
 public interface IBaseService<T, ID> {
 
 	T add(T t);
