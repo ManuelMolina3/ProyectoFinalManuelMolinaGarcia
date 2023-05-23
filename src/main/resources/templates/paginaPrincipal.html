@@ -10,6 +10,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
 		crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js" ></script>
 	<link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
 	<title>Pagina principal</title>
 </head>
@@ -56,63 +58,63 @@
 		</div>
 		<div class="row text-center text-lg-start">
 
-			<div class="col-lg-3 col-md-4 col-6">
+			<div class="col-lg-3 col-md-4 col-6" data-aos="fade-down">
 				<a href="#" class="d-block mb-4 h-100">
 					<img class="img-fluid img-thumbnail" src="../img/reforma1.jpg" alt="foto de la primera reforma">
 				</a>
 			</div>
-			<div class="col-lg-3 col-md-4 col-6">
+			<div class="col-lg-3 col-md-4 col-6" data-aos="fade-down">
 				<a href="#" class="d-block mb-4 h-100">
 					<img class="img-fluid img-thumbnail" src="../img/reforma2.jpg" alt="foto de la segunda reforma">
 				</a>
 			</div>
-			<div class="col-lg-3 col-md-4 col-6">
+			<div class="col-lg-3 col-md-4 col-6" data-aos="fade-down">
 				<a href="#" class="d-block mb-4 h-100">
 					<img class="img-fluid img-thumbnail" src="../img/reforma3.jpg" alt="foto de la tercera reforma">
 				</a>
 			</div>
-			<div class="col-lg-3 col-md-4 col-6">
+			<div class="col-lg-3 col-md-4 col-6" data-aos="fade-down">
 				<a href="#" class="d-block mb-4 h-100">
 					<img class="img-fluid img-thumbnail" src="../img/reforma4.jpg" alt="foto de la cuarta reforma">
 				</a>
 			</div>
-			<div class="col-lg-3 col-md-4 col-6">
+			<div class="col-lg-3 col-md-4 col-6" data-aos="fade-down">
 				<a href="#" class="d-block mb-4 h-100">
 					<img class="img-fluid img-thumbnail" src="../img/reforma5.jpg" alt="foto de la quinta reforma">
 				</a>
 			</div>
-			<div class="col-lg-3 col-md-4 col-6">
+			<div class="col-lg-3 col-md-4 col-6" data-aos="fade-down">
 				<a href="#" class="d-block mb-4 h-100">
 					<img class="img-fluid img-thumbnail" src="../img/reforma6.jpg" alt="foto de la sexta reforma">
 				</a>
 			</div>
-			<div class="col-lg-3 col-md-4 col-6">
+			<div class="col-lg-3 col-md-4 col-6" data-aos="fade-down">
 				<a href="#" class="d-block mb-4 h-100">
 					<img class="img-fluid img-thumbnail" src="../img/reforma7.jpg" alt="foto de la septima reforma">
 				</a>
 			</div>
-			<div class="col-lg-3 col-md-4 col-6">
+			<div class="col-lg-3 col-md-4 col-6" data-aos="fade-down">
 				<a href="#" class="d-block mb-4 h-100">
 					<img class="img-fluid img-thumbnail" src="../img/reforma8.jpg" alt="foto de la octava reforma">
 				</a>
 			</div>
-			<div class="col-lg-3 col-md-4 col-6">
+			<div class="col-lg-3 col-md-4 col-6" data-aos="fade-down">
 				<a href="#" class="d-block mb-4 h-100">
 					<img class="img-fluid img-thumbnail" src="../img/reforma9.jpg" alt="foto de la novena reforma">
 				</a>
 			</div>
-			<div class="col-lg-3 col-md-4 col-6">
+			<div class="col-lg-3 col-md-4 col-6" data-aos="fade-down">
 				<a href="#" class="d-block mb-4 h-100">
 					<img class="img-fluid img-thumbnail" src="../img/reforma10.jpg" alt="foto de la decima reforma">
 				</a>
 			</div>
-			<div class="col-lg-3 col-md-4 col-6">
+			<div class="col-lg-3 col-md-4 col-6" data-aos="fade-down">
 				<a href="#" class="d-block mb-4 h-100">
 					<img class="img-fluid img-thumbnail" src="../img/reforma11.jpg"
 						alt="foto de la decimo primera reforma">
 				</a>
 			</div>
-			<div class="col-lg-3 col-md-4 col-6">
+			<div class="col-lg-3 col-md-4 col-6" data-aos="fade-down">
 				<a href="#" class="d-block mb-4 h-100">
 					<img class="img-fluid img-thumbnail" src="../img/reforma12.jpg"
 						alt="foto de la decimo segunda reforma">
@@ -125,6 +127,9 @@
 	<footer>
 		<nav th:replace="~{fragment/footer::footer}"></nav>
 	</footer>
+	<script>
+		AOS.init();
+	</script>
 </body>
 
 </html>
