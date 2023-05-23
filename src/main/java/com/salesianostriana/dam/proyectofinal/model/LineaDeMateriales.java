@@ -6,8 +6,11 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
@@ -28,6 +31,7 @@ public class LineaDeMateriales {
 	@GeneratedValue
 	private Long id_lineaDeMateriales;
 	
+	private int cantidad;
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
 	@Builder.Default
@@ -37,5 +41,7 @@ public class LineaDeMateriales {
 				orphanRemoval= true)
 	private List<Materiales> materiales = new ArrayList<>();
 	
-	
+	@ManyToOne
+	@JoinColumn(foreignKey = @ForeignKey(name = "fk_lineaDeMateriales_reforma"))
+	private Reforma reforma;
 }

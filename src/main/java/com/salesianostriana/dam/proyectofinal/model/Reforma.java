@@ -1,8 +1,8 @@
 package com.salesianostriana.dam.proyectofinal.model;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -72,6 +73,12 @@ public class Reforma {
 	@EqualsAndHashCode.Exclude
 	@Builder.Default
 	@ManyToMany(mappedBy = "trabajaEnReforma", fetch = FetchType.EAGER)
-	private List<Trabajador> ReformaTrabajadapor = new ArrayList<>();
+	private Set<Trabajador> ReformaTrabajadapor = new HashSet<>();
 
+	
+	@ToString.Exclude
+	@EqualsAndHashCode.Exclude
+	@Builder.Default
+	@OneToMany(mappedBy= "reforma", fetch= FetchType.EAGER)
+	private Set <LineaDeMateriales> materiales = new HashSet <>();
 }

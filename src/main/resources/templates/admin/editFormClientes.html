@@ -13,7 +13,7 @@
   <div class="container-fluid form-section">
     <div class="row">
       <div class="col-md-6 p-0">
-        <img src="/img/editar.jpg" alt="Imagen de fondo">
+        <img th:src="@{/img/editar.jpg}" alt="Imagen de fondo">
       </div>
       <div class="col-md-6 bg-gray d-flex justify-content-center align-items-center">
         <form method="POST" th:action="@{/admin/editarCliente/submit}" th:object="${cliente}" class="w-75">
