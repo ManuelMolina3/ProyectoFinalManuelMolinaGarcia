@@ -40,4 +40,7 @@ public class Cliente {
 	@OneToMany(mappedBy= "propietario", fetch= FetchType.EAGER)
 	private List <Reforma> reformas = new ArrayList <>();
 
+	
+	
 }
+

@@ -32,9 +32,9 @@
 		</thead>
 		<tbody>
 			<tr th:each="parteTrabajador : ${listaPartes}">
-				<td th:text="${parteTrabajador.trabajador_id}">1</td>
-				<td th:text="${parteTrabajador.reforma_id}">1</td>
-				<td th:text="${parteTrabajador.fecha}">fecha</td>
+				<td th:text="${parteTrabajador.parteTrabajadorPK.trabajador_id}">1</td>
+				<td th:text="${parteTrabajador.parteTrabajadorPK.reforma_id}">1</td>
+				<td th:text="${parteTrabajador.parteTrabajadorPK.fecha}">fecha</td>
 				<td th:text="${parteTrabajador.numHoras}">presupuesto</td>
 				<td th:text="${parteTrabajador.numHorasExtra}"> Jefe de obra</td>
 				<td>

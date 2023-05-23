@@ -21,6 +21,8 @@ public class ParteTrabajadorPK implements Serializable{/**
 	
 	private long trabajador_id;
 	private long reforma_id;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fecha;
 
 	

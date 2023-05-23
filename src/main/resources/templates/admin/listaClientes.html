@@ -19,12 +19,13 @@
 <body>
 
 	
-	<form action="#" th:action="@{buscarCliente}" method="GET">
-		<input type="text" name="busqueda" placeholder="Buscar cliente"/>
-		<button class="btn- btn-danger" type="submit"></button>
-	</form>
 	
 	 <nav th:replace="~{fragment/menu::menu}"></nav>
+	 
+	<form action="#" th:action="@{buscarCliente}" method="GET">
+		<input type="text" name="busqueda" placeholder="Buscar cliente"/>
+		<button class="btn- btn-danger" type="submit"><i class="bi bi-search"></i></button>
+	</form>
 	<table class="table table-striped table-hover">
 		<thead>
 			<tr>

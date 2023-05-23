@@ -47,7 +47,9 @@ public class ReformaController {
 	}
 
 	@PostMapping("/addReforma/submit")
-	public String procesarFormReforma(@ModelAttribute("reforma") Reforma reforma) {
+	public String procesarFormReforma(@ModelAttribute("reforma") Reforma reforma, Model model) {
+		model.addAttribute("jefesDeObra", trabajadorServicio.findAll());
+		model.addAttribute("propietarios", clienteServicio.findAll());
 		reformaServicio.add(reforma);
 		return "redirect:/admin/listaReformas";
 	}
@@ -55,7 +57,7 @@ public class ReformaController {
 	@GetMapping("/editarReforma/{id}")
 	public String mostrarFormEdicionReforma(@PathVariable("id") long id, Model model) {
 		Reforma reformaEditar = reformaServicio.findById(id);
-		if (reformaEditar != null) {
+		if (reformaEditar !=null) {
 			model.addAttribute("reforma", reformaEditar);
 			model.addAttribute("jefesDeObra", trabajadorServicio.findAll());
 			model.addAttribute("propietarios", clienteServicio.findAll());
@@ -64,7 +66,6 @@ public class ReformaController {
 			return "redirect:/admin/listaReformas";
 		}
 	}
-
 	@PostMapping("/editarReforma/submit")
 	public String procesarFormEditReforma(@ModelAttribute("reforma") Reforma reforma) {
 		reformaServicio.edit(reforma);

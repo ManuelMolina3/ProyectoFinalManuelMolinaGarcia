@@ -10,11 +10,11 @@ public class AdminController {
 		
 		@GetMapping("/admin")
 		public String accederComoAdmin() {
-			return "/admin/PaginaPrincipalAdmin";
+			return "/admin/listaClientes";
 		}
 		@GetMapping("/user")
 		public String accederComoUser() {
-			return "/user/mireconstruccion";
+			return "/admin/paginaPrincipal";
 		}
 		@GetMapping("/")
 		public String accederPaginaPrincipal(){
@@ -24,4 +24,5 @@ public class AdminController {
 		public String accederLogueo() {
 			return "login";
 		}
+		
 }

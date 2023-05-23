@@ -11,26 +11,39 @@
 		integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
 		crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="../../css/style.css" th:href="@{/css/style.css}">
+    <script th:src="@{/js/validacionMateriales.js}" defer></script>
 	<title>MarGarReformas</title>
 </head>
 
 <body>
-	<form method="post" th:action="@{/admin/addMateriales/submit}" th:object="${materiales}">
-		<fieldset>AÑADIR UN MATERIAL</fieldset>
-		<div>
-			<label for="nombre" class="form-label">Nombre</label>
-			<input type="text" class="form-control" th:field="*{nombre}" requiered>
-		</div>
-		<div>
-			<label for="coste" class="form-label">Precio</label>
-			<input type="number" class="form-control" th:field="*{coste}" requiered>
-			<label for="pvp" class="form-label">PVP</label>
-			<input type="number" class="form-control" th:field="*{pvpMaterial}" requiered>
-		</div>
-		<div class="col-12">
-			<button type="submit" class="btn btn-primary col-12">Añadir</button>
-		</div>
-	</form>
+  <div class="container-fluid form-section">
+    <div class="row">
+      <div class="col-md-6 p-0">
+        <img th:src="@{/img/formulario.jpg}" alt="Imagen de fondo">
+      </div>
+      <div class="col-md-6 bg-gray d-flex justify-content-center align-items-center">
+        <form  method="post" th:action="@{/admin/addMateriales/submit}" th:object="${materiales}" class="w-75" id="formulario">
+          <h1 class="text-center mb-4">Alta de un material</h1>
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" th:field="*{nombre}" required>
+          </div>
+          <div class="mb-3">
+            <label for="coste" class="form-label">Precio</label>
+            <input type="number" class="form-control" th:field="*{coste}" id="coste" required>
+          </div>
+          <div class="mb-3">
+            <label for="pvp" class="form-label">PVP</label>
+            <input type="number" class="form-control" th:field="*{pvpMaterial}" id="pvpMaterial" required>
+            <p class="errorForm">El pvp debe de ser mayor que el coste del material</p>
+          </div>
+          <div class="col-12">
+            <input type="submit" class="btn btn-primary col-12" value="Añadir">
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

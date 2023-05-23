@@ -63,6 +63,7 @@ public class SecurityConfig {
 			.and()
 		.formLogin()
             .loginPage("/login")
+            .defaultSuccessUrl("/paginaPrincipal")
             .successHandler(new CustomAuthenticationSuccessHandler())
             .permitAll()
             .and()
