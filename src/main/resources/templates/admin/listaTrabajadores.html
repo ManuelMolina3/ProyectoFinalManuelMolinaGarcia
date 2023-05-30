@@ -42,8 +42,8 @@
 				<td th:text="${trabajador.nombre}">Paco</td>
 				<td th:text="${trabajador.apellido}">Fernandez García</td>
 				<td th:text="${trabajador.email}">paco@gmail.com</td>
-				<td th:text="${trabajador.sueldoBase}">1500</td>
-				<td th:text="${trabajador.precioHoraExtra}">25</td>
+				<td th:text="${#numbers.formatCurrency(trabajador.sueldoBase)}">1500</td>
+				<td th:text="${#numbers.formatCurrency(trabajador.precioHoraExtra)}">25</td>
 				<td>
 					<a href="#" th:href="@{/admin/editarTrabajador/{id}(id=${trabajador.id_trabajador})}"><i class="bi bi-pen-fill"></i></a> |
 					<a href="#" th:href="@{/admin/borrarTrabajadores/{id}(id=${trabajador.id_trabajador})}"><i class="bi bi-trash3-fill"></i></a>

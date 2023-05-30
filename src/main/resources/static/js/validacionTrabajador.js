@@ -1,9 +1,9 @@
-document.getElementById("email").addEventListener("blur", validarTrabajdor);
-document.getElementById("sueldo").addEventListener("blur", validarTrabajdor);
-document.getElementById("precioHorasExtra").addEventListener("blur", validarTrabajdor);
+document.getElementById("email").addEventListener("blur", validarTrabajador);
+document.getElementById("sueldo").addEventListener("blur", validarTrabajador);
+document.getElementById("precioHorasExtra").addEventListener("blur", validarTrabajador);
 let error = document.querySelectorAll(".errorForm");
 error.forEach(p => p.hidden = true);
-function validarTrabajdor(evento) {
+function validarTrabajador(evento) {
     let emailInput = document.getElementById("email");
     let sueldoInput = document.getElementById("sueldo");
     let precioHorasExtraInput = document.getElementById("precioHorasExtra");
@@ -35,4 +35,4 @@ function validarTrabajdor(evento) {
     }
 }
 let formulario = document.getElementById("formulario");
-formulario.addEventListener("submit", validarTrabajdor);
+formulario.addEventListener("submit", validarTrabajador);
