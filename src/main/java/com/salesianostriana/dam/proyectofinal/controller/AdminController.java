@@ -14,7 +14,7 @@ public class AdminController {
 		}
 		@GetMapping("/user")
 		public String accederComoUser() {
-			return "/admin/paginaPrincipal";
+			return "/paginaPrincipal";
 		}
 		@GetMapping("/")
 		public String accederPaginaPrincipal(){

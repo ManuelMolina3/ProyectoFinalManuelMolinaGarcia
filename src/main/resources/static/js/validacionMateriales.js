@@ -12,6 +12,12 @@ function validarPrecio(evento) {
     } else {
         document.getElementById("pvpMaterial").nextElementSibling.hidden = true;
     }
+    if (costeInput.value < 0) {
+        document.getElementById("coste").nextElementSibling.hidden = false;
+        resultado = false;
+    }else{
+        document.getElementById("coste").nextElementSibling.hidden = true;
+    }
     if (!resultado) {
         evento.preventDefault();
     }
