@@ -11,6 +11,7 @@
 		crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../../css/style.css" th:href="@{/css/style.css}">
+    <script th:src="@{/js/validacionTrabajador.js}" defer></script>
     <title>Edición para trabajadores</title>
 </head>
 <body>
@@ -20,7 +21,7 @@
         <img th:src="@{/img/editar.jpg}" alt="Imagen de fondo">
       </div>
       <div class="col-md-6 bg-gray d-flex justify-content-center align-items-center">
-        <form method="post" th:action="@{/admin/editarTrabajador/submit}" th:object="${trabajador}" class="w-75">
+        <form method="post" th:action="@{/admin/editarTrabajador/submit}" th:object="${trabajador}" class="w-75" id="formulario">
           <div class="mb-3">
 						<a th:href="@{/admin/listaTrabajadores}"><i class="bi bi-arrow-return-left"></i></a>
 					</div>
@@ -36,7 +37,8 @@
           </div>
           <div class="mb-3">
             <label for="email" class="form-label">Correo electronico</label>
-            <input type="email" class="form-control" th:field="*{email}">
+            <input type="email" class="form-control" th:field="*{email}"id="email">
+            <p class="errorForm">Ponga una correo valido</p>
           </div>
           <div class="mb-3">
             <label for="password" class="form-label">Password</label>
@@ -44,11 +46,13 @@
           </div>
           <div class="mb-3">
             <label for="sueldoBase" class="form-label">Sueldo base</label>
-            <input type="number" class="form-control" th:field="*{sueldoBase}">
+            <input type="number" class="form-control" th:field="*{sueldoBase}"id="sueldo">
+            <p class="errorForm">El sueldo no puede ser menor a 0</p>
           </div>
           <div class="mb-3">
             <label for="precioHorasextra" class="form-label">Precio de las horas extra</label>
-            <input type="number" class="form-control" th:field="*{precioHoraExtra}">
+            <input type="number" class="form-control" th:field="*{precioHoraExtra}" id="precioHorasExtra">
+            <p class="errorForm">El precio por horas extra no puede ser menor a 0</p>
           </div>
           <div class="col-12">
             <button type="submit" class="btn btn-primary col-12">Editar</button>

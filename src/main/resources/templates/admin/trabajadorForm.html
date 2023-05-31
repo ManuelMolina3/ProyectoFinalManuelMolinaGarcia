@@ -40,7 +40,7 @@
 					<div class="mb-3">
 						<label for="email" class="form-label">Correo electronico</label>
 						<input type="email" class="form-control" th:field="*{email}" id="email" required>
-            <p id="errorForm">Ponga una correo valido</p>
+            <p class="errorForm">Ponga una correo valido</p>
                     </div>
 
 
@@ -51,14 +51,14 @@
 					<div class="mb-3">
 						<label for="sueldoBase" class="form-label">Sueldo base</label>
 						<input type="number" class="form-control" th:field="*{sueldoBase}" id="sueldo" required>
-            <p id="errorForm">El sueldo no puede ser menor a 0</p>
+            <p class="errorForm">El sueldo no puede ser menor a 0</p>
           </div>
 
 					<div class="mb-3">
 						<label for="precioHorasextra" class="form-label">Precio de las horas extra</label>
 						<input type="number" class="form-control" th:field="*{precioHoraExtra}" id="precioHorasExtra"
 							required>
-              <p id="errorForm">El precio por horas extra no puede ser menor a 0</p>
+              <p class="errorForm">El precio por horas extra no puede ser menor a 0</p>
 					</div>
 
 					<div class="col-12">

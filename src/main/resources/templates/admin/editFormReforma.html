@@ -12,6 +12,7 @@
 		crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 		<link rel="stylesheet" href="../../css/style.css" th:href="@{/css/style.css}">
+		<script th:src="@{/js/validacionReforma.js}" defer></script>
 	<title>Edición para reformas</title>
 </head>
 
@@ -22,7 +23,7 @@
 				<img th:src="@{/img/editar.jpg}" alt="Imagen de fondo">
 			</div>
 			<div class="col-md-6 bg-gray d-flex justify-content-center align-items-center">
-				<form method="POST" th:action="@{/admin/editarReforma/submit}" th:object="${reforma}" class="w-75">
+				<form method="POST" th:action="@{/admin/editarReforma/submit}" th:object="${reforma}" class="w-75" id="formulario">
 					<div class="mb-3">
 						<a th:href="@{/admin/listaReformas}"><i class="bi bi-arrow-return-left"></i></a>
 					</div>
@@ -30,15 +31,17 @@
 					<div class="mb-3">
 						<input th:if="${reforma.id != 0}" type="hidden" name="id" th:field="*{id}" />
 						<label for="fechaInicio" class="form-label">Fecha de inicio</label>
-						<input type="date" class="form-control" th:field="*{fechaInicio}">
+						<input type="date" class="form-control" th:field="*{fechaInicio}" id="fechaInicio">
 					</div>
 					<div class="mb-3">
 						<label for="fechaFin" class="form-label">Fecha de fin</label>
-						<input type="date" class="form-control" th:field="*{fechaFinal}">
+						<input type="date" class="form-control" th:field="*{fechaFinal}" id="fechaFinal">
+						<p class="errorForm">Ponga una fecha valida</p>
 					</div>
 					<div class="mb-3">
 						<label for="presupuesto" class="form-label">Presupuesto</label>
-						<input type="number" class="form-control" th:field="*{presupuesto}">
+						<input type="number" class="form-control" th:field="*{presupuesto}" id="presupuesto">
+						<p class="errorForm">El presupuesto no puede ser menor a 0</p>
 					</div>
 					<div class="mb-3">
 						<label for="JefeDeObra">Jefe de obra</label>
