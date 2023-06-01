@@ -8,14 +8,14 @@ function validarParte(evento) {
     let numHoras = numHorasInput.value;
     let numHorasExtra = numHorasExtraInput.value;
     let resultado = true;
-    if (numHoras < 0) {
+    if (numHoras < 0 || numHoras > 8) {
         document.getElementById("numHoras").nextElementSibling.hidden = false;
         resultado = false;
     }
     else {
         document.getElementById("numHoras").nextElementSibling.hidden = true;
     }
-    if (numHorasExtra < 0) {
+    if (numHorasExtra < 0 || numHorasExtra > 2) {
         document.getElementById("numHorasExtra").nextElementSibling.hidden = false;
         resultado = false;
     }

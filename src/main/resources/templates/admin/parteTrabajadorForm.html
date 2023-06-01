@@ -51,12 +51,14 @@
           <div class="mb-3">
             <label for="numHoras" class="form-label">Numero de horas</label>
             <input type="number" class="form-control" th:field="*{numHoras}" id="numHoras" requiered>
-            <p class="errorForm">Las horas no pueden ser inferiores a 0</p>
+            <p class="errorForm">Añada un número de horas valido</p>
+            <p>El número de horas no podra ser inferior a 0 ni superior a 8</p>
           </div>
           <div class="mb-3">
             <label for="numHorasExtra" class="form-label">Número de horas extra</label>
             <input type="number" class="form-control" th:field="*{numHorasExtra}" id="numHorasExtra">
-            <p class="errorForm">Las horas no pueden ser inferiores a 0</p>
+            <p class="errorForm">Añada un número de horas valido</p>
+            <p>El número de horas extra no podra ser inferior a 0 ni superior a 2</p>
           </div>
           <div class="col-12">
             <button type="submit" class="btn btn-primary col-12">Añadir</button>
