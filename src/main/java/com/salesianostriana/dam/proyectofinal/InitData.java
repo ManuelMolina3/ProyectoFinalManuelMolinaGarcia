@@ -22,19 +22,23 @@ public class InitData {
 	@PostConstruct
 	public void init() {
 		
-		Usuario usuario = Usuario.builder()
+		Usuario usuario1 = Usuario.builder()
 				.admin(false)
-				.username("user")
+				.username("1")
 				.password(passwordEncoder.encode("1234"))
 				.build();
-		
+		Usuario usuario2 = Usuario.builder()
+				.admin(false)
+				.username("2")
+				.password(passwordEncoder.encode("1234"))
+				.build();
 		Usuario admin = Usuario.builder()
 				.admin(true)
 				.username("admin")
 				.password(passwordEncoder.encode("admin"))
 				.build();
 		
-		repo.saveAll(List.of(usuario, admin));
+		repo.saveAll(List.of(usuario1, usuario2, admin));
 		
 	}
 

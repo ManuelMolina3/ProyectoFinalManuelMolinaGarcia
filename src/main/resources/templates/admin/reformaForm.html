@@ -47,6 +47,10 @@
 						<div id="presupuestoHelp" class="form-text">Introduzca el presupuesto de la reforma</div>
 					</div>
 					<div class="mb-3">
+						<label for="calle" class="form-label">Calle</label>
+						<input type="text" class="form-control" th:field="*{calle}" required>
+					</div>
+					<div class="mb-3">
 						<label for="JefeDeObra">Jefe de obra</label>
 						<select th:field="*{jefeDeObra}" class="form-control">
 							<option value="-1">---</option>

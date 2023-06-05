@@ -14,7 +14,7 @@ public class AdminController {
 		}
 		@GetMapping("/user")
 		public String accederComoUser() {
-			return "/paginaPrincipal";
+			return "redirect:/user/listaParteTrabajador";
 		}
 		@GetMapping("/")
 		public String accederPaginaPrincipal(){
