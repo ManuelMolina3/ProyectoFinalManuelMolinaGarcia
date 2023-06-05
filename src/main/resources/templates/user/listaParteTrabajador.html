@@ -37,13 +37,11 @@
 				<td th:text="${parteTrabajador.numHoras}">presupuesto</td>
 				<td th:text="${parteTrabajador.numHorasExtra}"> Jefe de obra</td>
 				<td>
-					<a
-						th:href="@{/user/editParte/{id_t}/{id_r}/{fe}(id_t=${parteTrabajador.parteTrabajadorPK.trabajador_id},id_r=${parteTrabajador.parteTrabajadorPK.reforma_id}, fe=${parteTrabajador.parteTrabajadorPK.fecha})}"><i
+					<a th:href="@{/user/editParte/{id_t}/{id_r}/{fe}(id_t=${parteTrabajador.parteTrabajadorPK.trabajador_id},id_r=${parteTrabajador.parteTrabajadorPK.reforma_id}, fe=${parteTrabajador.parteTrabajadorPK.fecha})}"><i
 							class="bi bi-pen-fill"></i></a> |
 
-					<a
-						th:href="@{/user/borrarParte/{id_t}/{id_r}/{fe}(id_t=${parteTrabajador.parteTrabajadorPK.trabajador_id},id_r=${parteTrabajador.parteTrabajadorPK.reforma_id}, fe=${parteTrabajador.parteTrabajadorPK.fecha})}"><i
-							class="bi bi-trash3-fill"></i></a> |
+					<a th:href="@{/user/borrarParte/{id_t}/{id_r}/{fe}(id_t=${parteTrabajador.parteTrabajadorPK.trabajador_id},id_r=${parteTrabajador.parteTrabajadorPK.reforma_id}, fe=${parteTrabajador.parteTrabajadorPK.fecha})}"><i
+							class="bi bi-trash3-fill"></i></a> 
 				</td>
 			</tr>
 		</tbody>

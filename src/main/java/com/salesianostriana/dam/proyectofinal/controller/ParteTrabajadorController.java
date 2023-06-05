@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.salesianostriana.dam.proyectofinal.model.ParteTrabajador;
+import com.salesianostriana.dam.proyectofinal.model.Trabajador;
 import com.salesianostriana.dam.proyectofinal.service.ParteTrabajadorService;
 import com.salesianostriana.dam.proyectofinal.service.ReformaService;
 import com.salesianostriana.dam.proyectofinal.service.TrabajadorService;
@@ -36,7 +38,7 @@ public class ParteTrabajadorController {
 	}
 
 	@GetMapping("/listaParteTrabajador")
-	public String listaParteTrabajador(Model model) {
+	public String listaParteTrabajador(Model model, @AuthenticationPrincipal Trabajador t) {
 		model.addAttribute("listaPartes", parteTrabajadorServicio.findAll());
 		return "/user/listaParteTrabajador";
 	}

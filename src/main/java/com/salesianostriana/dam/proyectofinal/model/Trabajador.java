@@ -23,8 +23,13 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Trabajador {
+public class Trabajador extends Usuario{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue
 	private Long id_trabajador;
@@ -32,7 +37,6 @@ public class Trabajador {
 	private String nombre;
 	private String apellido;
 	private String email;
-	private String password;
 	private double sueldoBase;
 	private double precioHoraExtra;
 	
