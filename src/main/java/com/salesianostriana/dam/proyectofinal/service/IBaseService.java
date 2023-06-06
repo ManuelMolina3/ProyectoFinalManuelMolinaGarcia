@@ -1,6 +1,7 @@
 package com.salesianostriana.dam.proyectofinal.service;
 
 import java.util.List;
+import java.util.Optional;
 
 
 
@@ -8,7 +9,7 @@ public interface IBaseService<T, ID> {
 
 	T add(T t);
 
-	T findById(ID id);
+	Optional <T> findById(ID id);
 
 	List<T> findAll();
 

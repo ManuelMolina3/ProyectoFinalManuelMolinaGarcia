@@ -1,5 +1,9 @@
 package com.salesianostriana.dam.proyectofinal.model;
 
+
+
+
+
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -45,4 +49,5 @@ public class ParteTrabajador {
 		t.getParteTrabajador().remove(this);
 		this.trabajador = null;
 	}
+	
 }

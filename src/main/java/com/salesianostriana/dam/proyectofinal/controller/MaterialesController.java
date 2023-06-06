@@ -1,5 +1,7 @@
 package com.salesianostriana.dam.proyectofinal.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,8 +40,8 @@ public class MaterialesController {
 	}
 	@GetMapping("/editarMateriales/{id}")
 	public String mostrarFormEdicionMateriales(@PathVariable("id") long id, Model model) {
-		Materiales materialesEditar= materialesServicio.findById(id);
-		if(materialesEditar != null) {
+		Optional <Materiales> materialesEditar= materialesServicio.findById(id);
+		if(materialesEditar.isPresent()) {
 			model.addAttribute("materiales", materialesEditar);
 			return "/admin/editFormMateriales";
 		}else {

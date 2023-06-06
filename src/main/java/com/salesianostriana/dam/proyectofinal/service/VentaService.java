@@ -18,28 +18,31 @@ import com.salesianostriana.dam.proyectofinal.repository.IVentaRepository;
 @Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class VentaService extends BaseService<Venta, Long, IVentaRepository> {
 
-	private Map<Materiales, Integer> listaLineaVentas = new HashMap<>();
+	private Map<Materiales, Integer> lineaVentas = new HashMap<>();
 
-	public void addMateriales(Materiales m) {
-		if (listaLineaVentas.containsKey(m)) {
-			listaLineaVentas.replace(m, listaLineaVentas.get(m) + 1);
-		} else {
-			listaLineaVentas.put(m, 1);
-		}
-	}
-
-	public void removeMateriales(Optional<Materiales> materiales) {
-		if (materiales.isPresent() && listaLineaVentas.containsKey(materiales.get())) {
-			if (listaLineaVentas.get(materiales.get()) > 1) {
-				listaLineaVentas.replace(materiales.get(), listaLineaVentas.get(materiales.get()) - 1);
-			} else if (listaLineaVentas.get(materiales.get()) == 1) {
-				listaLineaVentas.remove(materiales.get());
+	public void addMateriales(Optional<Materiales> material) {
+		if (material.isPresent()) {
+			Materiales m = material.get();
+			if (lineaVentas.containsKey(m)) {
+				lineaVentas.replace(m, lineaVentas.get(m) + 1);
+			} else {
+				lineaVentas.put(m, 1);
 			}
 		}
 	}
 
+	public void removeMateriales(Optional <Materiales> material) {
+		if (material.isPresent() && lineaVentas.containsKey(material.get())) {
+	        if (lineaVentas.get(material.get()) > 1) {
+	            lineaVentas.replace(material.get(), lineaVentas.get(material.get()) - 1);
+	        } else if (lineaVentas.get(material.get()) == 1) {
+	            lineaVentas.remove(material.get());
+	        }
+	    }
+	}
+
 	public Map<Materiales, Integer> getMaterialesInCart() {
-		return Collections.unmodifiableMap(listaLineaVentas);
+		return Collections.unmodifiableMap(lineaVentas);
 	}
 
 	public Double totalCarrito() {

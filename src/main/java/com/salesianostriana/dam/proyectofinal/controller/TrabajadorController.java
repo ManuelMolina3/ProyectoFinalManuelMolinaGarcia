@@ -1,5 +1,7 @@
 package com.salesianostriana.dam.proyectofinal.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -46,8 +48,8 @@ public class TrabajadorController {
 
 	@GetMapping("/editarTrabajador/{id}")
 	public String mostrarFormEdicionTrabajador(@PathVariable("id") long id, Model model) {
-		Trabajador trabajadorEditar = trabajadorServicio.findById(id);
-		if (trabajadorEditar != null) {
+		Optional <Trabajador> trabajadorEditar = trabajadorServicio.findById(id);
+		if (trabajadorEditar.isPresent()) {
 			model.addAttribute("trabajador", trabajadorEditar);
 			return "/admin/editFormTrabajador";
 		} else {
