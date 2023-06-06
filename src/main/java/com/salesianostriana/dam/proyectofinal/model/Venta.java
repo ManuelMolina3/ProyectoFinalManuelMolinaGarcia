@@ -1,7 +1,7 @@
 package com.salesianostriana.dam.proyectofinal.model;
 
-import java.util.ArrayList;
 import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -21,27 +21,28 @@ import lombok.ToString;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class LineaDeMateriales {
-	
+public class Venta {
+
 	@Id
 	@GeneratedValue
-	private Long id_lineaDeMateriales;
+	private long id_venta;
 	
-	private int cantidad;
+	private double total;
+	
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
-	@Builder.Default
-	@OneToMany(mappedBy= "lineaVenta", 
-				fetch = FetchType.EAGER, 
-				cascade= CascadeType.ALL,
-				orphanRemoval= true)
-	private List<Materiales> materiales = new ArrayList<>();
+	@OneToMany(
+				mappedBy = "venta",
+				fetch = FetchType.EAGER,
+				cascade = CascadeType.ALL,
+				orphanRemoval = true
+		)
+	private List <LineaDeMateriales> listaLineaMateriaes;
 	
 	@ManyToOne
-	@JoinColumn(foreignKey = @ForeignKey(name = "fk_lineaDeMateriales_venta"))
-	private Venta venta;
-	
+	@JoinColumn(foreignKey = @ForeignKey(name = "fk_venta_reforma"))
+	private Reforma reforma;
 }

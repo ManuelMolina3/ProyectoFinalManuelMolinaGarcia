@@ -81,5 +81,5 @@ public class Reforma {
 	@EqualsAndHashCode.Exclude
 	@Builder.Default
 	@OneToMany(mappedBy= "reforma", fetch= FetchType.EAGER)
-	private Set <LineaDeMateriales> materiales = new HashSet <>();
+	private Set <Venta> ParteDeMateriales = new HashSet <>();
 }

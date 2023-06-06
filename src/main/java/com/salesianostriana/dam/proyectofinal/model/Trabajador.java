@@ -25,6 +25,8 @@ import lombok.ToString;
 @Builder
 public class Trabajador extends Usuario{
 	
+
+
 	/**
 	 * 
 	 */
@@ -39,7 +41,8 @@ public class Trabajador extends Usuario{
 	private String email;
 	private double sueldoBase;
 	private double precioHoraExtra;
-	
+
+
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
 	@OneToMany(mappedBy= "jefeDeObra", fetch= FetchType.EAGER)
