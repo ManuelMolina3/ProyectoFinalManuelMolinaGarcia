@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.salesianostriana.dam.proyectofinal.model.ParteTrabajador;
 import com.salesianostriana.dam.proyectofinal.model.ParteTrabajadorPK;
+import com.salesianostriana.dam.proyectofinal.model.Reforma;
 import com.salesianostriana.dam.proyectofinal.model.Trabajador;
 import com.salesianostriana.dam.proyectofinal.repository.IParteTrabajadorRepository;
 
@@ -24,12 +25,13 @@ public class ParteTrabajadorService extends BaseService<ParteTrabajador, ParteTr
 	
 	@Override
 	public ParteTrabajador add(ParteTrabajador parteTrabajador) {
-		Optional <ParteTrabajador> parteTrabajadorTra= parteTrabajador.getTrabajador();
-		if (parteTrabajadorTra.isPresent()) {
-			parteTrabajador.setTrabajador((trabajadorService.findById(parteTrabajador.getParteTrabajadorPK().getTrabajador_id())));
+		Optional<Reforma> parteReforma= reformaService.findById(parteTrabajador.getParteTrabajadorPK().getReforma_id());
+		Optional<Trabajador> parteTraba= trabajadorService.findById(parteTrabajador.getParteTrabajadorPK().getTrabajador_id());
+		if (parteTraba.isPresent()){
+			parteTrabajador.setTrabajador(parteTraba.get());
 		}
-		if(parteTrabajador.getReforma() == null) {
-			parteTrabajador.setReforma(reformaService.findById(parteTrabajador.getParteTrabajadorPK().getReforma_id()));
+		if(parteReforma.isPresent()) {
+			parteTrabajador.setReforma(parteReforma.get());
 		}
 		return super.add(parteTrabajador);
 	}
