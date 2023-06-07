@@ -13,7 +13,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -22,7 +21,8 @@ import lombok.ToString;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@EqualsAndHashCode(callSuper= true)
+@ToString(callSuper= true)
 public class Trabajador extends Usuario{
 	
 
@@ -46,11 +46,9 @@ public class Trabajador extends Usuario{
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
 	@OneToMany(mappedBy= "jefeDeObra", fetch= FetchType.EAGER)
-	@Builder.Default
 	private List <Reforma> reformas = new ArrayList<> ();
 	
 	@ManyToMany
-	@Builder.Default
 	@JoinTable(
 			name= "trabaja",
 			joinColumns= @JoinColumn(name= "id_trabajador"),
@@ -60,7 +58,6 @@ public class Trabajador extends Usuario{
 	private List<Reforma> trabajaEnReforma = new ArrayList <>();
 	
 	@OneToMany(mappedBy="trabajador", fetch= FetchType.EAGER)
-	@Builder.Default
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude
 	private List<ParteTrabajador> parteTrabajador= new ArrayList<>();

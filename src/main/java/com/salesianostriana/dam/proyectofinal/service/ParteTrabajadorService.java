@@ -2,6 +2,7 @@ package com.salesianostriana.dam.proyectofinal.service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,7 +24,8 @@ public class ParteTrabajadorService extends BaseService<ParteTrabajador, ParteTr
 	
 	@Override
 	public ParteTrabajador add(ParteTrabajador parteTrabajador) {
-		if (parteTrabajador.getTrabajador() == null) {
+		Optional <ParteTrabajador> parteTrabajadorTra= parteTrabajador.getTrabajador();
+		if (parteTrabajadorTra.isPresent()) {
 			parteTrabajador.setTrabajador((trabajadorService.findById(parteTrabajador.getParteTrabajadorPK().getTrabajador_id())));
 		}
 		if(parteTrabajador.getReforma() == null) {

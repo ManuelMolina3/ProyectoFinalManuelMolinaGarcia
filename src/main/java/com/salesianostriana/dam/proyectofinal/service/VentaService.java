@@ -1,6 +1,5 @@
 package com.salesianostriana.dam.proyectofinal.service;
 
-import java.time.LocalDate;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,10 +11,9 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.salesianostriana.dam.concesionario.model.Cliente;
-import com.salesianostriana.dam.concesionario.model.LineaVenta;
-import com.salesianostriana.dam.concesionario.model.Producto;
+import com.salesianostriana.dam.proyectofinal.model.LineaDeMateriales;
 import com.salesianostriana.dam.proyectofinal.model.Materiales;
+import com.salesianostriana.dam.proyectofinal.model.Reforma;
 import com.salesianostriana.dam.proyectofinal.model.Venta;
 import com.salesianostriana.dam.proyectofinal.repository.IVentaRepository;
 
@@ -61,22 +59,20 @@ public class VentaService extends BaseService<Venta, Long, IVentaRepository> {
 		}
 		return 0.0;
 	}
-	public void crearVenta(@AuthenticationPrincipal Reforma reforma) {
+	public void crearReformaMate(@AuthenticationPrincipal Reforma reforma) {
 	    Venta v = new Venta();
 	    for (Materiales m : lineaVentas.keySet()) {
 	        v.addLineaVenta(
-	        	LineaVenta.builder()
-	        		.producto(p)
-	        		.cantidad(listaLineaVentas.get(p))
+	        	LineaDeMateriales.builder()
+	        		.material(m)
+	        		.cantidad(lineaVentas.get(m))
 	        		.build()
 	        );
 	    }
-	    v.setFecha(LocalDate.now());
+	    v.setReforma(reforma);
 	    v.setTotal(totalCarrito());
-	    v.setCliente(cliente);
-	    v.setTrabajador(null);
-	    save(v);
+	    add(v);
 	    
-	    listaLineaVentas.clear();
+	    lineaVentas.clear();
 	}
 }
