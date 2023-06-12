@@ -31,7 +31,7 @@
 					<h1 class="text-center mb-4"> Editar el parte de un trabajador</h1>
 					<div class="mb-3">
 						<label for="trabajador_id">Trabajador</label>
-						<select th:field="${parteTrabajador.parteTrabajadorPK.trabajador_id}" class="form-control">
+						<select th:field="${parteTrabajador.parteTrabajadorPK.trabajador_id}" class="form-control" disabled>
 							<option value="-1">---</option>
 							<option th:each="trabajador : ${trabajadores}" th:value="${trabajador.id}"
 								th:text="${trabajador.nombre}">Nombre del trabajador</option>
@@ -39,7 +39,7 @@
 					</div>
 					<div class="mb-3">
 						<label for="reforma_id">Reforma</label>
-						<select th:field="${parteTrabajador.parteTrabajadorPK.reforma_id}" class="form-control">
+						<select th:field="${parteTrabajador.parteTrabajadorPK.reforma_id}" class="form-control" disabled>
 							<option value="-1">---</option>
 							<option th:each="reforma : ${reformas}" th:value="${reforma.id}" th:text="${reforma.id}">Id
 								de la reforma</option>

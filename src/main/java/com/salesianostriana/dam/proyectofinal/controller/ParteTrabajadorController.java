@@ -76,9 +76,11 @@ public class ParteTrabajadorController {
 	}
 
 	@PostMapping("/editarParte/submit")
-	public String procesarFormEditPartes(@ModelAttribute("parteTrabajador") ParteTrabajador parteTrabajador, @AuthenticationPrincipal Trabajador t, Reforma r, LocalDate f) {
+	public String procesarFormEditPartes(@ModelAttribute("parteTrabajador") ParteTrabajador parteTrabajador, @AuthenticationPrincipal Trabajador t, Reforma r, LocalDate f, Long id_r, Long id_t) {
 		parteTrabajador.setReforma(r);
 		parteTrabajador.setTrabajador(t);
+		parteTrabajador.getParteTrabajadorPK().setReforma_id(id_r);
+		parteTrabajador.getParteTrabajadorPK().setTrabajador_id(id_t);
 		parteTrabajador.getParteTrabajadorPK().setFecha(f);
 		parteTrabajadorServicio.edit(parteTrabajador);
 		return "redirect:/user/listaParteTrabajador";
