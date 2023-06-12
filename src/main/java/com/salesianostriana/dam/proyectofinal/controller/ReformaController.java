@@ -60,7 +60,7 @@ public class ReformaController {
 	public String mostrarFormEdicionReforma(@PathVariable("id") long id, Model model) {
 		Optional <Reforma> reformaEditar = reformaServicio.findById(id);
 		if (reformaEditar.isPresent()) {
-			model.addAttribute("reforma", reformaEditar);
+			model.addAttribute("reforma", reformaEditar.get());
 			model.addAttribute("jefesDeObra", trabajadorServicio.findAll());
 			model.addAttribute("propietarios", clienteServicio.findAll());
 			return "/admin/editFormReforma";

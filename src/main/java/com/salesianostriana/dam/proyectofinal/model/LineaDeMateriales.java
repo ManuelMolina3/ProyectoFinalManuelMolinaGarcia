@@ -27,7 +27,7 @@ public class LineaDeMateriales {
 
 	
 	@ManyToOne
-	@JoinColumn
+	@JoinColumn(foreignKey = @ForeignKey(name = "fk_lineaDeMateriales_material"))
 	private Materiales material;
 	
 	@ManyToOne

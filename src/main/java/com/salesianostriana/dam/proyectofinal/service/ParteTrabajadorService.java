@@ -40,7 +40,7 @@ public class ParteTrabajadorService extends BaseService<ParteTrabajador, ParteTr
 		return this.repositorio.findById(new ParteTrabajadorPK(trabajador_id, reforma_id, fecha)).orElse(null);
 	}
 	public List<ParteTrabajador> findByTrabajador (Trabajador t){
-		return this.repositorio.findParteTrabajadorByTrabajadorId(t);
+		return this.repositorio.findPartesByTrabajador(t);
 	}
 	
 }

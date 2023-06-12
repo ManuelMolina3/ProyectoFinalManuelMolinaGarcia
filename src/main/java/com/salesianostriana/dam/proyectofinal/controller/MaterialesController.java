@@ -42,7 +42,7 @@ public class MaterialesController {
 	public String mostrarFormEdicionMateriales(@PathVariable("id") long id, Model model) {
 		Optional <Materiales> materialesEditar= materialesServicio.findById(id);
 		if(materialesEditar.isPresent()) {
-			model.addAttribute("materiales", materialesEditar);
+			model.addAttribute("materiales", materialesEditar.get());
 			return "/admin/editFormMateriales";
 		}else {
 			return "redirect:/admin/listaMateriales";

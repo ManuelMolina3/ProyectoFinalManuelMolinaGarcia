@@ -49,5 +49,6 @@ public class ParteTrabajador {
 		t.getParteTrabajador().remove(this);
 		this.trabajador = null;
 	}
+
 	
 }

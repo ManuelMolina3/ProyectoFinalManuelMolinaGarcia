@@ -24,7 +24,7 @@
 				<img th:src="@{/img/editar.jpg}" alt="Imagen de fondo">
 			</div>
 			<div class="col-md-6 bg-gray d-flex justify-content-center align-items-center">
-				<form method="POST" th:action="@{/user/addParte/submit}" th:object="${parteTrabajador}" class="w-75" id="formulario">
+				<form method="POST" th:action="@{/user/editarParte/submit}" th:object="${parteTrabajador}" class="w-75" id="formulario">
 					<div class="mb-3">
 						<a th:href="@{/user/listaParteTrabajador}"><i class="bi bi-arrow-return-left"></i></a>
 					</div>
@@ -33,7 +33,7 @@
 						<label for="trabajador_id">Trabajador</label>
 						<select th:field="${parteTrabajador.parteTrabajadorPK.trabajador_id}" class="form-control">
 							<option value="-1">---</option>
-							<option th:each="trabajador : ${trabajadores}" th:value="${trabajador.id_trabajador}"
+							<option th:each="trabajador : ${trabajadores}" th:value="${trabajador.id}"
 								th:text="${trabajador.nombre}">Nombre del trabajador</option>
 						</select>
 					</div>
@@ -47,7 +47,7 @@
 					</div>
 					<div class="mb-3">
 						<label for="fecha" class="form-label">Fecha</label>
-						<input type="date" class="form-control" th:field="${parteTrabajador.parteTrabajadorPK.fecha}">
+						<input type="date" class="form-control" th:field="${parteTrabajador.parteTrabajadorPK.fecha}" readonly>
 					</div>
 					<div class="mb-3">
 						<label for="numHoras" class="form-label">Numero de horas</label>

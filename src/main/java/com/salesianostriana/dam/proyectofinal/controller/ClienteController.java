@@ -49,7 +49,7 @@ public class ClienteController {
 	public String mostrarFormEdicionCliente(@PathVariable("id") long id, Model model) {
 		Optional <Cliente> clienteEditar = clienteServicio.findById(id);
 		if (clienteEditar.isPresent()) {
-			model.addAttribute("cliente", clienteEditar);
+			model.addAttribute("cliente", clienteEditar.get());
 			return "/admin/editFormClientes";
 		} else {
 			return "redirect:/admin/listaClientes";

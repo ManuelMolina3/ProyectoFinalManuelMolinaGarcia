@@ -54,7 +54,7 @@
 						<label for="JefeDeObra">Jefe de obra</label>
 						<select th:field="*{jefeDeObra}" class="form-control">
 							<option value="-1">---</option>
-							<option th:each="jefeDeObra : ${jefesDeObra}" th:value="${jefeDeObra.id_trabajador}"
+							<option th:each="jefeDeObra : ${jefesDeObra}" th:value="${jefeDeObra.id}"
 								th:text="${jefeDeObra.nombre}">Jefe de obra</option>
 						</select>
 					</div>

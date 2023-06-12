@@ -12,6 +12,6 @@ import com.salesianostriana.dam.proyectofinal.model.Trabajador;
 public interface IParteTrabajadorRepository extends JpaRepository<ParteTrabajador, ParteTrabajadorPK>{
 
     @Query("select p from ParteTrabajador p where p.trabajador = ?1")
-    List <ParteTrabajador> findParteTrabajadorByTrabajadorId(Trabajador t);
+    List <ParteTrabajador> findPartesByTrabajador(Trabajador t);
 
 }

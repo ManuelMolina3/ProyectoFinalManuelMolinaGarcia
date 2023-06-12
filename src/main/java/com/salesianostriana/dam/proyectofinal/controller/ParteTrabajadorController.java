@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.salesianostriana.dam.proyectofinal.model.ParteTrabajador;
+import com.salesianostriana.dam.proyectofinal.model.Reforma;
 import com.salesianostriana.dam.proyectofinal.model.Trabajador;
 import com.salesianostriana.dam.proyectofinal.service.ParteTrabajadorService;
 import com.salesianostriana.dam.proyectofinal.service.ReformaService;
@@ -39,7 +40,7 @@ public class ParteTrabajadorController {
 
 	@GetMapping("/listaParteTrabajador")
 	public String listaParteTrabajador(Model model, @AuthenticationPrincipal Trabajador t) {
-		model.addAttribute("listaPartes", parteTrabajadorServicio.findAll());
+		model.addAttribute("listaPartes", parteTrabajadorServicio.findByTrabajador(t));
 		return "/user/listaParteTrabajador";
 	}
 
@@ -52,7 +53,8 @@ public class ParteTrabajadorController {
 	}
 
 	@PostMapping("/addParte/submit")
-	public String procesarFormPartes(@ModelAttribute("parteTrabajador") ParteTrabajador parteTrabajador) {
+	public String procesarFormPartes(@ModelAttribute("parteTrabajador") ParteTrabajador parteTrabajador, @AuthenticationPrincipal Trabajador t) {
+		parteTrabajador.setTrabajador(t);
 		parteTrabajadorServicio.add(parteTrabajador);
 		return "redirect:/user/listaParteTrabajador";
 	}
@@ -74,7 +76,10 @@ public class ParteTrabajadorController {
 	}
 
 	@PostMapping("/editarParte/submit")
-	public String procesarFormEditPartes(@ModelAttribute("parteTrabajador") ParteTrabajador parteTrabajador) {
+	public String procesarFormEditPartes(@ModelAttribute("parteTrabajador") ParteTrabajador parteTrabajador, @AuthenticationPrincipal Trabajador t, Reforma r, LocalDate f) {
+		parteTrabajador.setReforma(r);
+		parteTrabajador.setTrabajador(t);
+		parteTrabajador.getParteTrabajadorPK().setFecha(f);
 		parteTrabajadorServicio.edit(parteTrabajador);
 		return "redirect:/user/listaParteTrabajador";
 	}

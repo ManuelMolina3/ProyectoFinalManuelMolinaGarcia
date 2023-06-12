@@ -50,7 +50,7 @@ public class TrabajadorController {
 	public String mostrarFormEdicionTrabajador(@PathVariable("id") long id, Model model) {
 		Optional <Trabajador> trabajadorEditar = trabajadorServicio.findById(id);
 		if (trabajadorEditar.isPresent()) {
-			model.addAttribute("trabajador", trabajadorEditar);
+			model.addAttribute("trabajador", trabajadorEditar.get());
 			return "/admin/editFormTrabajador";
 		} else {
 			return "redirect:/admin/listaTrabajadores";
