@@ -38,19 +38,19 @@ public class VentaController {
 			throw new ExcepcionCarritoVacio ("Sin materiales en la reforma");
 		}else {
 			model.addAttribute("productos", servicioDeVenta.getMaterialesInCart());
-			return "carrito";
+			return "/admin/carrito";
 		}
 		
 	}
 	@GetMapping ("/productoACarrito/{id}")
 	public String addProductoACarrito (@PathVariable("id") Long id, Model model) {
 		servicioDeVenta.addMateriales(servicioMateriales.findById(id));	 		 	
-		return "redirect:/carrito";
+		return "redirect:/admin/carrito";
 	}
 	@GetMapping("/borrarProducto/{id}")
 	public String removeProducto (@PathVariable("id") Long id, Model model) {
 		servicioDeVenta.removeMateriales(servicioMateriales.findById(id));
-		return "redirect:/carrito";
+		return "redirect:/admin/carrito";
 	}
 	@ModelAttribute("totalCarrito")
 	public Double mostrartotalCarrito () {   	
@@ -59,7 +59,7 @@ public class VentaController {
 	@PostMapping("/carrito/finalizarCompra")
 	public String finalizarCompra(@AuthenticationPrincipal Reforma reforma) {
 		servicioDeVenta.crearReformaMate(reforma);
-		return "reformaFinalizada";
+		return "/admin/reformaFinalizada";
 	}
 	
 	@ModelAttribute("totalReformas")
@@ -74,5 +74,10 @@ public class VentaController {
 	public String listVenta(Model model) {
 		model.addAttribute("listaVentas", servicioDeVenta.findAll());
 		return "admin/listVenta";
+	}
+	@GetMapping("/materialesRefo")
+	public String mostrarMateriales(Model model) {
+		model.addAttribute("listaMateriales", servicioMateriales.findAll());
+		return "/admin/listaMateriales";
 	}
 }

@@ -79,5 +79,6 @@ public class ReformaController {
 		reformaServicio.deleteById(id);
 		return "redirect:/admin/listaReformas";
 	}
+	
 
 }
