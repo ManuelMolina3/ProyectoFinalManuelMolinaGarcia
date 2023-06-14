@@ -23,5 +23,7 @@ public class Materiales {
 	private String nombre;
 	private double coste;
 	private double pvpMaterial;
+	
+
 
 }

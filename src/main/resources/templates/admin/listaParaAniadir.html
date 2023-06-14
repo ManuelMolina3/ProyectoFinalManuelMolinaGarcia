@@ -32,7 +32,7 @@
 				<td th:text="${#numbers.formatCurrency(materiales.coste)}">5.09</td>
 				<td th:text="${#numbers.formatCurrency(materiales.pvpMaterial)}">6.98</td>
 				<td>
-					<a href="#" th:href="@{/admin/materialACarrito/{id}}">Añadir</a>
+					<a href="#" th:href="@{/admin/materialACarrito/{id}(id=${materiales.id})}">Añadir</a>
 				</td>
 			</tr>
 		</tbody>
