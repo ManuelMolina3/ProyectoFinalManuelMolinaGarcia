@@ -16,10 +16,7 @@
 </head>
 
 <body>
-	<form action="#" th:action="@{buscarMateriales}" method="GET">
-		<input type="text" name="busqueda" placeholder="Buscar materiales" />
-		<button class="btn- btn-danger" type="submit"><i class="bi bi-search"></i></button>
-	</form>
+
 	<table class="table table-hover">
 
 		<thead>
@@ -35,7 +32,7 @@
 				<td th:text="${#numbers.formatCurrency(materiales.coste)}">5.09</td>
 				<td th:text="${#numbers.formatCurrency(materiales.pvpMaterial)}">6.98</td>
 				<td>
-					<a href="#" th:href="@{/admin/productoACarrito/{id}}">Añadir</a>
+					<a href="#" th:href="@{/admin/materialACarrito/{id}}">Añadir</a>
 				</td>
 			</tr>
 		</tbody>

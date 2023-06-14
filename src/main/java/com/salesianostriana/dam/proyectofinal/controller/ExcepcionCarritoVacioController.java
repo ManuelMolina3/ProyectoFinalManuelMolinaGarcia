@@ -9,7 +9,7 @@ import com.salesianostriana.dam.proyectofinal.excepcion.ExcepcionCarritoVacio;
 @ControllerAdvice
 public class ExcepcionCarritoVacioController {
 	
-	@ExceptionHandler(ExcepcionCarritoVacio.class)
+	@ExceptionHandler (ExcepcionCarritoVacio.class)
 	public String excepcionDeCarrito (Model model, ExcepcionCarritoVacio ecv) {
 		
 		model.addAttribute("excepcion", ecv);

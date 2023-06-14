@@ -15,7 +15,7 @@
 		<thead>
 			<tr>
 				<th>Nombre</th>
-				<th>cantidad</th>
+				<th>cantidad</th> 
 				<th>Precio</th>
 				<th>Subtotal</th>
 			</tr>
@@ -27,7 +27,7 @@
 				<td style="text-align: center">
 					<input class="form-control" id="inputQuantity" value="3" th:value="${element.value}" type="text" />
 				</td>
-				<td><strong th:text="${#numbers.formatCurrency(element.key.pvpMateriales)}"></strong>
+				<td><strong th:text="${#numbers.formatDecimal(element.key.pvpMateriales, 0, 2) + '€'}"></strong>
 				</td>
 				<td><strong th:text="${element.key.precioBase * element.value + '€'}"></strong></td>
 				<a href="#" th:href="@{/borrarMaterialRe/{id}(id=${element.key.id})}"><i

@@ -63,5 +63,6 @@ public class MaterialesController {
 		model.addAttribute("listaMateriales", materialesServicio.findByMateriales(busqueda));
 		return "/admin/listaMateriales";
 	}
+
 	
 }
