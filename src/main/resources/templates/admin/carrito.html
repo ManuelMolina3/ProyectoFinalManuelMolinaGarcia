@@ -1,26 +1,58 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <title>MarGarReformas</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../static/css/estilos.css">
-    <script src="../static/js/jquery-3.3.1.min.js"></script>
-    <script src="../static/js/bootstrap.min.js"></script>
+	<title>MarGarReformas</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../static/css/estilos.css">
+	<script src="../static/js/jquery-3.3.1.min.js"></script>
+	<script src="../static/js/bootstrap.min.js"></script>
+	<title>MarGarReforma</title>
 </head>
+
 <body>
-    <table>
-    <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>cantidad</th>
-            <th>Precio</th>
-            <th>Subtotal</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr th:each="element : ${}">
-        </tr>
-    </tbody>
-    </table>
+	<table>
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>cantidad</th>
+				<th>Precio</th>
+				<th>Subtotal</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="element : ${materiales.entrySet()}">
+				<h3><span th:text="${element.key.nombre}">Product name</span></h3>
+				</td>
+				<td style="text-align: center">
+					<input class="form-control" id="inputQuantity" value="3" th:value="${element.value}" type="text" />
+				</td>
+				<td><strong th:text="${#numbers.formatCurrency(element.key.pvpMateriales)}"></strong>
+				</td>
+				<td><strong th:text="${element.key.precioBase * element.value + '€'}"></strong></td>
+				<a href="#" th:href="@{/borrarMaterialRe/{id}(id=${element.key.id})}"><i
+						class="bi bi-trash3-fill"></i></a>
+			</tr>
+			<tr>
+				<td>   </td>
+				<td>   </td>
+				<td> </td>
+				<td colspan="2">
+					<a href="#" th:href="@{/admin/listaParaAniadir}"><button type="button" class="btn" >Continuar Comprando</button> </ahref="#" th:href="@{/carrito/finalizarCompra}">
+				</td>
+
+				<td>
+					<a href="#" th:href="@{/admin/carrito/finalizarCompra}">
+						<button type="button" class="btn btn-custom">
+							<form method="POST" action="#" th:action="@{/admin/carrito/finalizarCompra}">
+								Finalizar Compra
+							</form>
+						</button>
+					</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
 </body>
+
 </html>

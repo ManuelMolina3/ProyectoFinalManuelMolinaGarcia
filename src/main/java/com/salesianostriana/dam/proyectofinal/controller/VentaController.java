@@ -42,12 +42,12 @@ public class VentaController {
 		}
 		
 	}
-	@GetMapping ("/productoACarrito/{id}")
+	@GetMapping ("/materialACarrito/{id}")
 	public String addProductoACarrito (@PathVariable("id") Long id, Model model) {
 		servicioDeVenta.addMateriales(servicioMateriales.findById(id));	 		 	
 		return "redirect:/admin/carrito";
 	}
-	@GetMapping("/borrarProducto/{id}")
+	@GetMapping("/borrarMaterialRe/{id}")
 	public String removeProducto (@PathVariable("id") Long id, Model model) {
 		servicioDeVenta.removeMateriales(servicioMateriales.findById(id));
 		return "redirect:/admin/carrito";
@@ -77,7 +77,7 @@ public class VentaController {
 	}
 	@GetMapping("/materialesRefo")
 	public String mostrarMateriales(Model model) {
-		model.addAttribute("listaMateriales", servicioMateriales.findAll());
-		return "/admin/listaMateriales";
+		model.addAttribute("listaMaterialesRe", servicioMateriales.findAll());
+		return "/admin/listaParaAniadir";
 	}
 }

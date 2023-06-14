@@ -16,31 +16,31 @@
 </head>
 
 <body>
-<form action="#" th:action="@{buscarMateriales}" method="GET">
-		<input type="text" name="busqueda" placeholder="Buscar materiales"/>
+	<form action="#" th:action="@{buscarMateriales}" method="GET">
+		<input type="text" name="busqueda" placeholder="Buscar materiales" />
 		<button class="btn- btn-danger" type="submit"><i class="bi bi-search"></i></button>
-		</form>
-    <table class="table table-hover">
+	</form>
+	<table class="table table-hover">
 
-        <thead>
-            <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Precio</th>
-                <th scope="col">PVP</th>
-            </tr>
-          </thead>
-          <tbody th:each="materiales : ${listaMaterialesRe}">
-            <tr>
-            <td th:text="${materiales.nombre}">Ladrillo</td>
-            <td th:text="${#numbers.formatCurrency(materiales.coste)}">5.09</td>
-            <td th:text="${#numbers.formatCurrency(materiales.pvpMaterial)}">6.98</td>
-			<td>
-				<a href="#" th:href="@{/admin/productoACarrito/{id}}">Añadir</a> 
-			</td>
-		</tr>
+		<thead>
+			<tr>
+				<th scope="col">Nombre</th>
+				<th scope="col">Precio</th>
+				<th scope="col">PVP</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="materiales : ${listaMaterialesRe}">
+				<td th:text="${materiales.nombre}">Ladrillo</td>
+				<td th:text="${#numbers.formatCurrency(materiales.coste)}">5.09</td>
+				<td th:text="${#numbers.formatCurrency(materiales.pvpMaterial)}">6.98</td>
+				<td>
+					<a href="#" th:href="@{/admin/productoACarrito/{id}}">Añadir</a>
+				</td>
+			</tr>
 		</tbody>
-      
-    </table>
+
+	</table>
 </body>
 
 </html>
