@@ -32,16 +32,17 @@
 					<div class="mb-3">
 						<label for="reforma_id">Reforma</label>
 						<select th:field="${parteTrabajador.parteTrabajadorPK.reforma_id}" class="form-control"
-							required>
+							required id="refo">
 							<option value="-1">---</option>
 							<option th:each="reforma : ${reformas}" th:value="${reforma.id}" th:text="${reforma.calle}">
 								Id de la reforma</option>
 						</select>
+						<p class="errorForm">Seleccione una reforma</p>
 					</div>
 					<div class="mb-3">
 						<label for="fecha" class="form-label">Fecha</label>
 						<input type="date" class="form-control" th:field="${parteTrabajador.parteTrabajadorPK.fecha}"
-							requiered>
+							required>
 					</div>
 					<div class="mb-3">
 						<label for="numHoras" class="form-label">Numero de horas</label>

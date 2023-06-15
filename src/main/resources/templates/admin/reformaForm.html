@@ -52,19 +52,23 @@
 					</div>
 					<div class="mb-3">
 						<label for="JefeDeObra">Jefe de obra</label>
-						<select th:field="*{jefeDeObra}" class="form-control">
+						<select th:field="*{jefeDeObra}" class="form-control" id="jefeDeObra" required>
 							<option value="-1">---</option>
 							<option th:each="jefeDeObra : ${jefesDeObra}" th:value="${jefeDeObra.id}"
 								th:text="${jefeDeObra.nombre}">Jefe de obra</option>
+
 						</select>
+						<p class="errorForm">Es necesario que seleccione un jefe de obra</p>
+
 					</div>
 					<div class="mb-3">
 						<label for="Propietario">Propietario</label>
-						<select th:field="*{propietario}" class="form-control">
+						<select th:field="*{propietario}" class="form-control" id="propietario" required>
 							<option value="-1">---</option>
 							<option th:each="propietario : ${propietarios}" th:value="${propietario.id_cliente}"
-								th:text="${propietario.nombre}">Propietario</option>
+								th:text="${propietario.nombre}">Propietario</option>S
 						</select>
+						<p class="errorForm">Es necesario que seleccione un propietario</p>
 					</div>
 
 					<div class="col-12">

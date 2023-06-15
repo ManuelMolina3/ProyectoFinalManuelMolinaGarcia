@@ -1,5 +1,6 @@
 document.getElementById("numHoras").addEventListener("blur", validarParte);
 document.getElementById("numHorasExtra").addEventListener("blur", validarParte);
+document.getElementById("refo").addEventListener("blur", validarParte);
 let error = document.querySelectorAll(".errorForm");
 error.forEach(p => p.hidden = true);
 function validarParte(evento) {
@@ -22,6 +23,12 @@ function validarParte(evento) {
     else {
         document.getElementById("numHorasExtra").nextElementSibling.hidden = true;
     }
+    if(refo.value == "-1"){
+        document.getElementById("refo").nextElementSibling.hidden = false;
+        resultado = false;
+      }else{
+        document.getElementById("refo").nextElementSibling.hidden = true;
+      }
     if (!resultado) {
         evento.preventDefault();
     }

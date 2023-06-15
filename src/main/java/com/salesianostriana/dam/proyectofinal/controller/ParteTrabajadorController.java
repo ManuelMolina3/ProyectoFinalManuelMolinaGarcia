@@ -47,7 +47,7 @@ public class ParteTrabajadorController {
 	@GetMapping("/addParte")
 	public String mostrarFormPartes(Model model) {
 		model.addAttribute("parteTrabajador", new ParteTrabajador());
-		model.addAttribute("trabajadores", trabajadorServicio.findAll());
+		//model.addAttribute("trabajadores", trabajadorServicio.findAll());
 		model.addAttribute("reformas", reformaServicio.findAll());
 		return "/user/parteTrabajadorForm";
 	}

@@ -1,6 +1,8 @@
 document.getElementById("fechaFinal").addEventListener("blur", validarFechas);
 document.getElementById("fechaInicio").addEventListener("blur", validarFechas);
 document.getElementById("presupuesto").addEventListener("blur", validarFechas);
+document.getElementById("jefeDeObra").addEventListener("blur", validarFechas);
+document.getElementById("propietario").addEventListener("blur", validarFechas);
 let error = document.querySelectorAll(".errorForm");
 error.forEach(p => p.hidden = true);
 function validarFechas(evento) {
@@ -22,6 +24,18 @@ function validarFechas(evento) {
       resultado = false;
     }else{
       document.getElementById("presupuesto").nextElementSibling.hidden = true;
+    }
+    if(jefeDeObra.value == "-1"){
+      document.getElementById("jefeDeObra").nextElementSibling.hidden = false;
+      resultado = false;
+    }else{
+      document.getElementById("jefeDeObra").nextElementSibling.hidden = true;
+    }
+    if(propietario.value == "-1"){
+      document.getElementById("propietario").nextElementSibling.hidden = false;
+      resultado = false;
+    }else{
+      document.getElementById("propietario").nextElementSibling.hidden = true;
     }
     if(!resultado){
         evento.preventDefault();
