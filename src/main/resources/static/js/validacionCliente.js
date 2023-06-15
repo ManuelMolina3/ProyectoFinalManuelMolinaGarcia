@@ -23,7 +23,7 @@ function validarFormulario(evento) {
   }
 
   // Validar teléfono
-  if (telefonoInput.value.length > 9 || telefonoInput.value.length < 8) {
+  if (telefonoInput.value.length > 9 || telefonoInput.value.length < 8 || telefonoInput.value < 0) {
     document.getElementById("telefono").nextElementSibling.hidden = false;
     resultado = false;
   } else {
