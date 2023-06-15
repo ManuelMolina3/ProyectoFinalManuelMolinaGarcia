@@ -68,6 +68,8 @@ public class SecurityConfig {
             .permitAll()
             .and()
         .logout()
+        	.logoutUrl("/logout")
+        	.logoutSuccessUrl("/")
             .permitAll();
 		
 		// Añadimos esto para poder seguir accediendo a la consola de H2
