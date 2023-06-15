@@ -1,5 +1,7 @@
 package com.salesianostriana.dam.proyectofinal.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -56,9 +58,9 @@ public class ReformaController {
 
 	@GetMapping("/editarReforma/{id}")
 	public String mostrarFormEdicionReforma(@PathVariable("id") long id, Model model) {
-		Reforma reformaEditar = reformaServicio.findById(id);
-		if (reformaEditar !=null) {
-			model.addAttribute("reforma", reformaEditar);
+		Optional <Reforma> reformaEditar = reformaServicio.findById(id);
+		if (reformaEditar.isPresent()) {
+			model.addAttribute("reforma", reformaEditar.get());
 			model.addAttribute("jefesDeObra", trabajadorServicio.findAll());
 			model.addAttribute("propietarios", clienteServicio.findAll());
 			return "/admin/editFormReforma";
@@ -77,5 +79,6 @@ public class ReformaController {
 		reformaServicio.deleteById(id);
 		return "redirect:/admin/listaReformas";
 	}
+	
 
 }

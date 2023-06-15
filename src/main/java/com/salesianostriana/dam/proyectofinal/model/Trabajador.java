@@ -5,8 +5,6 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -18,24 +16,34 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-public class Trabajador {
+@EqualsAndHashCode(callSuper= true)
+@ToString(callSuper= true)
+@SuperBuilder
+public class Trabajador extends Usuario{
 	
-	@Id
+
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/*@Id
 	@GeneratedValue
-	private Long id_trabajador;
+	private Long id_trabajador;*/
 	
 	private String nombre;
 	private String apellido;
 	private String email;
-	private String password;
 	private double sueldoBase;
 	private double precioHoraExtra;
-	
+
+
 	@ToString.Exclude
 	@EqualsAndHashCode.Exclude
 	@OneToMany(mappedBy= "jefeDeObra", fetch= FetchType.EAGER)
@@ -53,9 +61,9 @@ public class Trabajador {
 	private List<Reforma> trabajaEnReforma = new ArrayList <>();
 	
 	@OneToMany(mappedBy="trabajador", fetch= FetchType.EAGER)
-	@Builder.Default
 	@EqualsAndHashCode.Exclude
 	@ToString.Exclude
+	@Builder.Default
 	private List<ParteTrabajador> parteTrabajador= new ArrayList<>();
 	
 

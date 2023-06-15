@@ -39,6 +39,7 @@ public class Reforma {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fechaFinal;
 	private double presupuesto;
+	private String calle;
 
 	@ManyToOne
 	@JoinColumn(foreignKey = @ForeignKey(name = "fk_reforma_trabajador"))
@@ -80,5 +81,5 @@ public class Reforma {
 	@EqualsAndHashCode.Exclude
 	@Builder.Default
 	@OneToMany(mappedBy= "reforma", fetch= FetchType.EAGER)
-	private Set <LineaDeMateriales> materiales = new HashSet <>();
+	private Set <Venta> ParteDeMateriales = new HashSet <>();
 }

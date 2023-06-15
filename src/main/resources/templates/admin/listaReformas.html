@@ -26,6 +26,7 @@
 				<th scope="col">Fecha de inicio</th>
 				<th scope="col">Fecha de Fin</th>
 				<th scope="col">Presupuesto</th>
+				<th scope="col">Calle</th>
 				<th scope="col">Jefe de obra</th>
 				<th scope="col">Propietario</th>
 				<th><a th:href="@{/admin/addReforma}"><i class="bi bi-house-add-fill"></i></a></th>
@@ -37,12 +38,13 @@
 				<td th:text="${reforma.fechaInicio}">fecha de inicio</td>
 				<td th:text="${reforma.fechaFinal}">fecha de final</td>
 				<td th:text="${#numbers.formatCurrency(reforma.presupuesto)}">presupuesto</td>
+				<td th:text="${reforma.calle}">Calle de la reforma</td>
 				<td th:text="${reforma.jefeDeObra.nombre}"> Jefe de obra</td>
 				<td th:text="${reforma.propietario.nombre}">Propietario</td>
 				<td>
 					<a th:href="@{/admin/editarReforma/{id}(id=${reforma.id})}"><i class="bi bi-pen-fill"></i></a> |
 					<a th:href="@{/admin/borrarReforma/{id}(id=${reforma.id})}"><i class="bi bi-trash3-fill"></i></a> |
-					<a th:href="@{/admin/verDetalles/{id}(id=${reforma.id})}">Ver detalles</a>
+					<a th:href="@{/admin/materialesRefo}"><button type="button" class="btn">Añadir materiales</button></a>
 				</td>
 			</tr>
 		</tbody>

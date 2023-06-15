@@ -27,7 +27,7 @@
 					</div>
           <h1 class="text-center mb-4"> Editar un trabajador</h1>
           <div class="mb-3">
-			<input th:if="${trabajador.id_trabajador != 0}" type="hidden" name="id" th:field="*{id_trabajador}" />
+			<input th:if="${trabajador.id != 0}" type="hidden" name="id" th:field="*{id}" />
             <label for="nombre" class="form-label">Nombre</label>
             <input type="text" class="form-control" th:field="*{nombre}">
           </div>

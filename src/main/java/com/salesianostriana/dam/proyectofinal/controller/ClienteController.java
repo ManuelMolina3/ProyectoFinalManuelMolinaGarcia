@@ -1,5 +1,7 @@
 package com.salesianostriana.dam.proyectofinal.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -45,9 +47,9 @@ public class ClienteController {
 
 	@GetMapping("/editarCliente/{id}")
 	public String mostrarFormEdicionCliente(@PathVariable("id") long id, Model model) {
-		Cliente clienteEditar = clienteServicio.findById(id);
-		if (clienteEditar != null) {
-			model.addAttribute("cliente", clienteEditar);
+		Optional <Cliente> clienteEditar = clienteServicio.findById(id);
+		if (clienteEditar.isPresent()) {
+			model.addAttribute("cliente", clienteEditar.get());
 			return "/admin/editFormClientes";
 		} else {
 			return "redirect:/admin/listaClientes";
