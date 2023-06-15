@@ -29,9 +29,7 @@
 		<tbody>
 			<tr th:each="element : ${materiales.entrySet()}">
 				<td th:text="${element.key.nombre}">Product name</td>
-				<td style="text-align: center">
-					<input class="form-control" id="inputQuantity" value="3" th:value="${element.value}" type="text" />
-				</td>
+				<td th:text="${element.value}">1</td>
 				<td th:text="${element.key.pvpMaterial + '€'}">1</td>
 				<td th:text="${element.key.pvpMaterial * element.value + '€'}"></td>
 				<td>
@@ -55,13 +53,7 @@
 				</td>
 
 				<td>
-					<a href="#" th:href="@{/admin/carrito/finalizarCompra}">
-						<button type="button" class="btn btn-custom">
-							<form method="POST" action="#" th:action="@{/admin/carrito/finalizarCompra}">
-								Finalizar Compra
-							</form>
-						</button>
-					</a>
+					<a href="#" th:href="@{/admin/carrito/finalizarCompra}"><button type="button" class="btn">Finalizar compra</button></a>
 				</td>
 			</tr>
 		</tbody>
